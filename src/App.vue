@@ -5,11 +5,7 @@ import {  RouterView } from 'vue-router'
 <template>
   <header>
     Lotso
-
-    <div class="wrapper">
-      <nav>
-      </nav>
-    </div>
+    <!--TODO progress bar-->
   </header>
 
   <RouterView />
