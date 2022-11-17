@@ -4,12 +4,8 @@ import {ref} from "vue";
 
 let progressRate = ref(0)
 
-function increaseProgress(n) {
-  progressRate.value += n
-}
-
-function decreaseProgress(n) {
-  progressRate.value -= n
+function setProgressRate(n) {
+  progressRate.value = n
 }
 </script>
 
@@ -20,7 +16,7 @@ function decreaseProgress(n) {
     進度：{{progressRate}}
   </header>
 
-  <RouterView @increase-progress="increaseProgress" />
+  <RouterView @set-progress-rate="setProgressRate" />
 </template>
 
 <style scoped>
