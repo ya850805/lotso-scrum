@@ -5,11 +5,10 @@
 
   請接受挑戰任務，成功通過Scrum新手村的挑戰任務吧～～～～
   
-  <RouterLink to="/po-intro">Next</RouterLink>
+  <RouterLink to="/po-intro" @click="$emit('increaseProgress', 10)">Next</RouterLink>
 </template>
 
 <script setup>
-
 </script>
 
 <style scoped>
