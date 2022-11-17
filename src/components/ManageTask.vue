@@ -6,7 +6,13 @@
 </template>
 
 <script setup>
+import {onMounted} from "vue";
+import {TASKS_KEY} from "@/constant/const";
 
+onMounted(() => {
+  const taskArray = []
+  localStorage.setItem(TASKS_KEY, JSON.stringify(taskArray))
+})
 </script>
 
 <style scoped>
