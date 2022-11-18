@@ -19,7 +19,7 @@
 
   <ol>
     <ul v-for="task in taskArray">
-      {{task.points}}--{{task.name}}--{{task.link}}
+      {{task.points}}--{{task.name}}--{{task.link}} <button @click="deleteTask(task.id)">delete</button>
     </ul>
   </ol>
 
@@ -54,6 +54,10 @@ function addTask() {
     }
     taskArray.value.push(task)
   }
+}
+
+function deleteTask(id) {
+  taskArray.value = taskArray.value.filter(t => t.id != id)
 }
 
 function refreshLocalStorage() {
