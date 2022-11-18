@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/ltoso-scrum/'
+    publicPath: '/lotso-scrum/'
 }
