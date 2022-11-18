@@ -14,3 +14,4 @@ app.mount('#app')
 app.component('draggable', draggable)
 
 //TODO use template with slot
+//TODO when every component mounted, need to reset progress bar.
