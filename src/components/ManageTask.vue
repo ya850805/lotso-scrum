@@ -17,11 +17,29 @@
 
   <hr>
 
+  <h2>任務清單</h2>
   <draggable
       class="list-group"
-      :list="taskArray"
-      group="people"
-      itemKey="name"
+      :list="taskArray1"
+      group="tasks"
+      itemKey="id"
+  >
+    <template #item="{ element, index }">
+      <div class="list-group-item">
+        {{ element.points }} -- {{ element.name }} -- {{ element.link }}
+        <button @click="deleteTask(element.id)">delete</button>
+      </div>
+    </template>
+  </draggable>
+
+  <hr>
+
+  <h2>代辦清單排序</h2>
+  <draggable
+      class="list-group"
+      :list="taskArray2"
+      group="tasks"
+      itemKey="id"
   >
     <template #item="{ element, index }">
       <div class="list-group-item">
@@ -32,7 +50,8 @@
   </draggable>
 
   <br>
-  <RouterLink to="/scrum-intro" @click="$emit('setProgressRate', 30); refreshLocalStorage()">Submit</RouterLink>
+
+  <RouterLink to="/scrum-intro" @click="$emit('setProgressRate', 30); submit()">Submit</RouterLink>
 </template>
 
 <script setup>
@@ -40,7 +59,8 @@ import {onMounted, ref} from "vue";
 import {INIT_SCRUM_TASK, TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
 import {TASK_NAME_IS_BLANK} from "@/constant/error";
 
-let taskArray = ref(INIT_SCRUM_TASK);
+let taskArray1 = ref(INIT_SCRUM_TASK);
+let taskArray2 = ref([])
 let taskPointArray = ref(TASK_STORY_POINTS)
 
 let taskName = ref("")
@@ -48,29 +68,33 @@ let taskLink = ref("")
 let taskPoint = ref(null)
 
 //TODO manage tasks - Add, Delete, Edit
-
 function addTask() {
   //validation
   if(taskName.value.trim() === "") {
     alert(TASK_NAME_IS_BLANK)
   } else {
     const task = {
-      id: taskArray.value.length + 1,
+      id: taskArray1.value.length + taskArray2.value.length + 1,
       name: taskName,
       link: taskLink,
       points: taskPoint
     }
-    taskArray.value.push(task)
+    taskArray1.value.push(task)
   }
 }
 
 function deleteTask(id) {
-  taskArray.value = taskArray.value.filter(t => t.id != id)
+  if(taskArray1.value.filter(t => t.id == id).length > 0) {
+    taskArray1.value = taskArray1.value.filter(t => t.id != id)
+  } else {
+    taskArray2.value = taskArray2.value.filter(t => t.id != id)
+  }
 }
 
-function refreshLocalStorage() {
+function submit() {
+  // TODO check taskArray2 is not empty
   localStorage.removeItem(TASKS_KEY)
-  localStorage.setItem(TASKS_KEY, JSON.stringify(taskArray.value))
+  localStorage.setItem(TASKS_KEY, JSON.stringify(taskArray2.value))
 }
 </script>
 
