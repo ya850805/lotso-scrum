@@ -6,6 +6,8 @@
 
   我們平常管理任務是使用 Jira 這套軟體，
   有空先去註冊和熟悉唷！
+
+  <RouterLink to="/sort-task" @click="$emit('setProgressRate', 40)">Next</RouterLink>
 </template>
 
 <script setup>
