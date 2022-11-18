@@ -38,3 +38,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### deploy github pages
+```sh
+sh ./deploy.sh
+```
