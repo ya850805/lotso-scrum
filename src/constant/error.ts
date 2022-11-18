@@ -1,0 +1,1 @@
+export const TASK_NAME_IS_BLANK = "task name is required"

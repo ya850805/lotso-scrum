@@ -2,6 +2,20 @@
 <template>
   請把需求放到產品待辦清單，並調整待辦的優先度順序。
   我們公司也推薦使用 Jira 來做任務的管理呢！
+  <hr>
+
+  代辦清單名稱
+  <input type="text" v-model="taskName" placeholder="必填"><br>
+  Jira連結
+  <input type="text" v-model="taskLink" placeholder="連結"><br>
+  分數
+  <select v-model="taskPoint">
+    <option>選項</option>
+    <option v-for="point in taskPointArray" :value="point">{{point}}</option>
+  </select><br>
+  <button @click="addTask()">Add</button>
+
+  <hr>
 
   <ol>
     <ul v-for="task in taskArray">
@@ -15,11 +29,32 @@
 
 <script setup>
 import {onMounted, ref} from "vue";
-import {INIT_SCRUM_TASK, TASKS_KEY} from "@/constant/const";
+import {INIT_SCRUM_TASK, TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
+import {TASK_NAME_IS_BLANK} from "@/constant/error";
 
 let taskArray = ref(INIT_SCRUM_TASK);
+let taskPointArray = ref(TASK_STORY_POINTS)
+
+let taskName = ref("")
+let taskLink = ref("")
+let taskPoint = ref(null)
 
 //TODO manage tasks - Add, Delete, Edit
+
+function addTask() {
+  //validation
+  if(taskName.value.trim() === "") {
+    alert(TASK_NAME_IS_BLANK)
+  } else {
+    const task = {
+      id: taskArray.value.length + 1,
+      name: taskName,
+      link: taskLink,
+      points: taskPoint
+    }
+    taskArray.value.push(task)
+  }
+}
 
 function refreshLocalStorage() {
   localStorage.removeItem(TASKS_KEY)
