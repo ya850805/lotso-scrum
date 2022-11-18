@@ -17,11 +17,19 @@
 
   <hr>
 
-  <ol>
-    <ul v-for="task in taskArray">
-      {{task.points}}--{{task.name}}--{{task.link}} <button @click="deleteTask(task.id)">delete</button>
-    </ul>
-  </ol>
+  <draggable
+      class="list-group"
+      :list="taskArray"
+      group="people"
+      itemKey="name"
+  >
+    <template #item="{ element, index }">
+      <div class="list-group-item">
+        {{ element.points }} -- {{ element.name }} -- {{ element.link }}
+        <button @click="deleteTask(element.id)">delete</button>
+      </div>
+    </template>
+  </draggable>
 
   <br>
   <RouterLink to="/scrum-intro" @click="$emit('setProgressRate', 30); refreshLocalStorage()">Submit</RouterLink>
