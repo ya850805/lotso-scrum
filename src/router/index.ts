@@ -5,6 +5,7 @@ import ManageTask from '../components/ManageTask.vue'
 import ScrumIntro from '../components/ScrumIntro.vue'
 import SortTask from '../components/SortTask.vue'
 import SprintCalendar from '../components/SprintCalendar.vue'
+import SprintProcess from '../components/SprintProcess.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/sprint-calendar',
       name: 'sprint-calendar',
       component: SprintCalendar
+    },
+    {
+      path: '/sprint-process',
+      name: 'sprint-process',
+      component: SprintProcess
     }
   ]
 })
