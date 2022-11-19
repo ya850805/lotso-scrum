@@ -1,0 +1,13 @@
+<!--page5-->
+<template>
+  Sprint是一個短衝，團隊會在這期間執行開發，舉辦每日站立會議
+  (Daily Scrum)，追蹤成員工作狀況，在Sprint結束也包含
+  短衝檢視會議(Sprint Review)、短衝自省會議(Sprint Retrospective)
+</template>
+
+<script setup>
+</script>
+
+<style scoped>
+
+</style>

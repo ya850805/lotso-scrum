@@ -12,6 +12,9 @@
       {{task.points}}--{{task.name}}--{{task.link}}
     </ul>
   </ol>
+
+  <br>
+  <RouterLink to="/sprint-calendar" @click="$emit('setProgressRate', 50)">Submit</RouterLink>
 </template>
 
 <script setup>
