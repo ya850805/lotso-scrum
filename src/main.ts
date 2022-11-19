@@ -15,4 +15,3 @@ app.component('draggable', draggable)
 
 //TODO use template with slot
 //TODO when every component mounted, need to reset progress bar.
-//TODO fix issue that refresh router link will cause 404 in github pages.
