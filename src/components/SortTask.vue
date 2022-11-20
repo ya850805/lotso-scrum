@@ -5,22 +5,59 @@
   <br>
   你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！
   點數共有1 、2 、3 、5 、8 、13 、21，Point越大，代表花費時間越多~
-  <br>
 
-  <ol>
-    <ul v-for="task in taskArray">
-      {{task.points}}--{{task.name}}--{{task.link}}
-    </ul>
-  </ol>
+  <hr>
+  你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！
+  點數共有1 、2 、3 、5 、8 、13 、21，Point越大，代表花費時間越多~<br><br>
+
+  <draggable
+      class="list-group"
+      :list="taskArray"
+      group="tasks"
+      itemKey="id"
+  >
+    <template #item="{ element, index }">
+      <div class="list-group-item">
+        {{ element.points }} -- {{ element.name }} -- {{ element.link }}
+      </div>
+    </template>
+  </draggable>
+
+  <hr>
+
+  <h2>開發A組 短衝待辦清單 21點/5人</h2>
+  <draggable
+      class="list-group"
+      :list="finalTaskArray"
+      group="tasks"
+      itemKey="id"
+  >
+    <template #item="{ element, index }">
+      <div class="list-group-item">
+        {{ element.points }} -- {{ element.name }} -- {{ element.link }}
+      </div>
+    </template>
+  </draggable>
+
 
   <br>
-  <RouterLink to="/sprint-calendar" @click="$emit('setProgressRate', 50)">Submit</RouterLink>
+  <RouterLink to="/sprint-calendar" @click="$emit('setProgressRate', 50); submit()">Submit</RouterLink>
 </template>
 
 <script setup>
 import {TASKS_KEY} from "@/constant/const";
 import {onMounted, ref} from "vue";
 let taskArray = ref(JSON.parse(localStorage.getItem(TASKS_KEY)))
+let finalTaskArray = ref([])
+
+function submit() {
+  alert('submit...')
+  //TODO the point of the tasks that include in finalTaskArray cannot be null
+  //TODO the total points cannot over the limitation
+}
+
+//TODO edit task's point
+
 </script>
 
 <style scoped>
