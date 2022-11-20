@@ -81,10 +81,9 @@ const meetings = ref(SPRINT_MEETINGS)
 const daily = ref([])
 const review = ref([])
 const retrospective = ref([])
-
 let fromBlock
-
 const router = useRouter()
+const emit = defineEmits(['setProgressRate'])
 
 function startDrag(from) {
   fromBlock = from
@@ -118,9 +117,10 @@ function addToFrom(element) {
 
 function submit() {
   //TODO validate every meeting's position is correct or not
-  // router.push({
-  //
-  // })
+  router.push({
+    name: 'retro-item'
+  })
+  emit('setProgressRate', 70)
 }
 
 </script>
