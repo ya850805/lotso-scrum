@@ -51,7 +51,6 @@ let taskArray = ref(JSON.parse(localStorage.getItem(TASKS_KEY)))
 let finalTaskArray = ref([])
 
 function submit() {
-  alert('submit...')
   //TODO the point of the tasks that include in finalTaskArray cannot be null
   //TODO the total points cannot over the limitation
   //TODO check the final task array cannot be empty.
