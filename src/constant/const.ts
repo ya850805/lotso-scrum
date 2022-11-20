@@ -28,3 +28,18 @@ export const INIT_SCRUM_TASK = [
         points: TASK_STORY_POINTS[6]
     },
 ]
+
+export const SPRINT_MEETINGS = [
+    {
+        id: 1,
+        name: "每日站立會議(Daily Scrum)"
+    },
+    {
+        id: 2,
+        name: "短衝檢視會議(Sprint Review)"
+    },
+    {
+        id: 3,
+        name: "短衝自省會議(Sprint Retrospective)"
+    }
+]
