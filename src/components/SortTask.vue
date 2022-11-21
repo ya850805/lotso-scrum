@@ -18,7 +18,10 @@
   >
     <template #item="{ element, index }">
       <div class="list-group-item">
-        {{ element.points }} -- {{ element.name }} -- {{ element.link }}
+        <select :value="element.points" @change="editPoint(1, element.id, $event)">
+          <option>選項</option>
+          <option v-for="point in taskPointArray" :value="point">{{point}}</option>
+        </select> -- {{ element.name }} -- {{ element.link }}
       </div>
     </template>
   </draggable>
@@ -31,10 +34,13 @@
       :list="finalTaskArray"
       group="tasks"
       itemKey="id"
+      @change="checkNullPoint"
   >
     <template #item="{ element, index }">
       <div class="list-group-item">
-        {{ element.points }} -- {{ element.name }} -- {{ element.link }}
+        <select :value="element.points" @change="editPoint(2, element.id, $event)">
+          <option v-for="point in taskPointArray" :value="point">{{point}}</option>
+        </select> -- {{ element.name }} -- {{ element.link }}
       </div>
     </template>
   </draggable>
@@ -45,18 +51,40 @@
 </template>
 
 <script setup>
-import {TASKS_KEY} from "@/constant/const";
+import {TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
 import {onMounted, ref} from "vue";
-let taskArray = ref(JSON.parse(localStorage.getItem(TASKS_KEY)))
-let finalTaskArray = ref([])
+
+const taskArray = ref(JSON.parse(localStorage.getItem(TASKS_KEY)))
+const finalTaskArray = ref([])
+const taskPointArray = ref(TASK_STORY_POINTS)
+
+function editPoint(from, id, event) {
+  const editPoint = parseInt(event.target.value)
+  if (from == 1) {
+    taskArray.value.filter(task => task.id = id)[0].points = editPoint
+  } else if (from == 2) {
+    finalTaskArray.value.filter(task => task.id = id)[0].points = editPoint
+  }
+}
+
+function checkNullPoint() {
+  const nullPointTasks = finalTaskArray.value.filter(task => task.points == null)
+  if(nullPointTasks.length != 0) {
+    alert("you had add null point task!")
+    finalTaskArray.value = finalTaskArray.value.filter(task => task.points != null)
+    taskArray.value.push(nullPointTasks[0])
+  }
+}
 
 function submit() {
   //TODO the point of the tasks that include in finalTaskArray cannot be null
   //TODO the total points cannot over the limitation
   //TODO check the final task array cannot be empty.
-}
 
-//TODO edit task's point
+  //TODO add finalTaskArray to localStorage
+
+  console.log(finalTaskArray.value)
+}
 
 </script>
 
