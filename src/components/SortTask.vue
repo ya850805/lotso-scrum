@@ -31,6 +31,7 @@
       :list="finalTaskArray"
       group="tasks"
       itemKey="id"
+      @change="checkNullPoint"
   >
     <template #item="{ element, index }">
       <div class="list-group-item">
@@ -49,6 +50,15 @@ import {TASKS_KEY} from "@/constant/const";
 import {onMounted, ref} from "vue";
 let taskArray = ref(JSON.parse(localStorage.getItem(TASKS_KEY)))
 let finalTaskArray = ref([])
+
+function checkNullPoint() {
+  const nullPointTasks = finalTaskArray.value.filter(task => task.points == null)
+  if(nullPointTasks.length != 0) {
+    alert("you had add null point task!")
+    finalTaskArray.value = finalTaskArray.value.filter(task => task.points != null)
+    taskArray.value.push(nullPointTasks[0])
+  }
+}
 
 function submit() {
   //TODO the point of the tasks that include in finalTaskArray cannot be null
