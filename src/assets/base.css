@@ -1,74 +1,154 @@
 /* color palette from <https://github.com/vuejs/theme> */
+
+/* ---顏色變數--- */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+    /* color-variables */
+    /*深粉紅色 */
+    --primary: #BB3D63;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+    /*--sub_primary: #cbb291;*/
+    /*--secondary: #b21614;*/
+    /*--sub_secondary: #c2a073;*/
 
-  --vt-c-indigo: #2c3e50;
+    /*白色*/
+    --white: #fff;
+    --white-70: #ffffff70;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+    /*灰色*/
+    --txt-default: #383838;
+    --txt-placeholder: #808080;
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+    /*其他*/
+    --info-tag1: #faf7f4;
+    --info-ta2: #faf7f2;
+
+    /*gradient-variables*/
+    --gradient_primary: linear-gradient(270deg, #FF6A6A 0%, #FF6B96 33.85%, #FD87FF 70.31%, #BB85FF 100%);
+    --gradient_sec: linear-gradient(180deg, rgba(255, 106, 106, 0.3) 0%, #BB85FF 100%);
+    --gradient_thi: linear-gradient(180deg, rgba(255, 106, 106, 0.3) 0%, #BB85FF 100%);
+    --gradient_bg: linear-gradient(180.42deg, #FFF1E0 0.29%, #FFEBEB 99.55%);
+    --gradient_neu: linear-gradient(180deg, #EBEDF0 0%, #F2F4F6 100%);
+
+    /*shadow-variables*/
+    --inner_glass: inset 3px 3px 4px rgba(114, 114, 114, 0.4);
+    --outside_glass: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+    --up_neum: inset -5px -5px 10px -2px rgba(255, 255, 255, 0.5), inset 5px 5px 10px -2px rgba(117, 127, 138, 0.5);
+    --down_neum: 5px 5px 10px rgba(117, 127, 138, 0.5);
+
+    /* font-variables */
+    --font-size-base: 18px;
+    --font-h1: 72px;
+    --font-h2: 30px;
+    --font-h3: 24px;
+
+    /*font-weight*/
+    --fw-bold: 500;
+    --fw-blank: 800;
 }
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
+h1, .fz-h1 {
+    font-size: var(--font-h1);
+    line-height: 72px;
+    letter-spacing: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+h2, .fz-h2 {
+    font-size: var(--font-h2);
+    line-height: 60px
+}
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+h3, .fz-h3 {
+    font-size: var(--font-h3);
+    line-height: 36px
+}
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
+
+p ,.font-default {
+    font-size: var(--font-size-base);
+    font-weight: var(--fw-bold);
+    line-height: 30px;
+    letter-spacing: 2px;
+    color: var(--txt-default);
+    text-align: left;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  position: relative;
-  font-weight: normal;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    font-weight: normal;
 }
 
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    color: var(--txt-default);
+    background: var(--gradient_bg);
+    background-image: url("img_bg.png");
+    background-size: cover;
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-size: var(--font-size-base)
+    /*text-rendering: optimizeLegibility;*/
+    /*-webkit-font-smoothing: antialiased;*/
+    /*-moz-osx-font-smoothing: grayscale;*/
 }
+
+
+/*:root {*/
+/*    --vt-c-white: #ffffff;*/
+/*    --vt-c-white-soft: #f8f8f8;*/
+/*    --vt-c-white-mute: #f2f2f2;*/
+
+/*    --vt-c-black: #181818;*/
+/*    --vt-c-black-soft: #222222;*/
+/*    --vt-c-black-mute: #282828;*/
+
+/*    --vt-c-indigo: #2c3e50;*/
+
+/*    --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);*/
+/*    --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);*/
+/*    --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);*/
+/*    --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);*/
+
+/*    --vt-c-text-light-1: var(--vt-c-indigo);*/
+/*    --vt-c-text-light-2: rgba(60, 60, 60, 0.66);*/
+/*    --vt-c-text-dark-1: var(--vt-c-white);*/
+/*    --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);*/
+/*}*/
+
+/* semantic color variables for this project */
+/*:root {*/
+/*    --color-background: var(--vt-c-white);*/
+/*    --color-background-soft: var(--vt-c-white-soft);*/
+/*    --color-background-mute: var(--vt-c-white-mute);*/
+
+/*    --color-border: var(--vt-c-divider-light-2);*/
+/*    --color-border-hover: var(--vt-c-divider-light-1);*/
+
+/*    --color-heading: var(--vt-c-text-light-1);*/
+/*    --color-text: var(--vt-c-text-light-1);*/
+
+/*    --section-gap: 160px;*/
+/*}*/
+
+/*@media (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        --color-background: var(--vt-c-black);*/
+/*        --color-background-soft: var(--vt-c-black-soft);*/
+/*        --color-background-mute: var(--vt-c-black-mute);*/
+
+/*        --color-border: var(--vt-c-divider-dark-2);*/
+/*        --color-border-hover: var(--vt-c-divider-dark-1);*/
+
+/*        --color-heading: var(--vt-c-text-dark-1);*/
+/*        --color-text: var(--vt-c-text-dark-2);*/
+/*    }*/
+/*}*/
+

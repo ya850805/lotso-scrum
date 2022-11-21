@@ -11,9 +11,12 @@ function setProgressRate(n) {
 
 <template>
   <header>
-    Lotso
+    <img src="./assets/img_logo.svg" class="img-logo">
     <!--TODO progress bar-->
-    進度：{{progressRate}}
+    <div>
+      進度：{{progressRate}}
+    </div>
+
   </header>
 
   <RouterView @set-progress-rate="setProgressRate" />
