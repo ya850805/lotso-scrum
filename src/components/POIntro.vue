@@ -6,7 +6,12 @@
 </template>
 
 <script setup>
+import {onMounted} from "vue";
+const emit = defineEmits(['setProgressRate'])
 
+onMounted(() => {
+  emit('setProgressRate', 10)
+})
 </script>
 
 <style scoped>

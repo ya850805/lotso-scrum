@@ -19,7 +19,7 @@
         <i class="i-task"></i>
       </div>
 
-      <RouterLink to="/po-intro" @click="$emit('setProgressRate', 10)">
+      <RouterLink to="/po-intro">
         <div class="btn-primary">
           <p class="txt-neu fz-h2">Next</p>
         </div>
@@ -30,6 +30,12 @@
 </template>
 
 <script setup>
+import {onMounted} from "vue";
+const emit = defineEmits(['setProgressRate'])
+
+onMounted(() => {
+  emit('setProgressRate', 0)
+})
 </script>
 
 <style scoped>
