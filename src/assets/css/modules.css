@@ -43,6 +43,7 @@
 .btn-primary:hover .txt-neu {
     color: var(--white) !important;
 }
+
 /* @元件-progress bar ---------------------------------------------------------------------------------------------- */
 
 .outside-progress {
@@ -107,11 +108,12 @@ i {
     background-repeat: no-repeat;
     z-index: 10;
 }
-.final-card .img-po{
+
+.final-card .img-po {
     width: 486px;
     height: 420px;
     left: 130px;
-    top:0;
+    top: 0;
     background-size: 80%;
 }
 
@@ -123,4 +125,59 @@ i {
     height: 559px;
     background-repeat: no-repeat;
     z-index: 10;
+    /*transform-origin: 100px 50px;*/
+    animation-name: leftIn;
+    animation-duration: .8s, 1.6s;
+    /*animation-timing-function: ease-in-out, ease-in-out;*/
+    /*animation-delay: 1s, 2s;*/
+    /*animation-iteration-count: 1, 8;*/
+    /*animation-fill-mode: both, both;*/
 }
+
+/*.handShake{*/
+/*    transform-origin: 100px 50px;*/
+/*    animation-name: handShake;*/
+/*    animation-duration: .8s, 1.6s;*/
+/*    animation-timing-function: ease-in-out, ease-in-out;*/
+/*    animation-delay: 1s, 2s;*/
+/*    animation-iteration-count: 1, 8;*/
+/*    animation-fill-mode: both, both;*/
+/*}*/
+
+
+/*//CSS*/
+@keyframes leftIn {
+    0% {
+        right: -100px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+/*@keyframes handShake {*/
+/*    0% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+
+/*    14.3% {*/
+/*        transform: rotate(-9deg);*/
+/*    }*/
+
+/*    25.7% {*/
+/*        transform: rotate(-1deg);*/
+/*    }*/
+
+/*    34.3% {*/
+/*        transform: rotate(-10deg);*/
+/*    }*/
+
+/*    42.9% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+
+/*    100% {*/
+/*        transform: rotate(0deg);*/
+/*    }*/
+/*}*/

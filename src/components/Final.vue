@@ -4,7 +4,7 @@
   <section class="final-card flex-col flex-sb">
 
     <img src="../assets/images/img_group.png" class="img-po"/>
-    <img src="../assets/images/img_bear.png" class="img-bear">
+    <img src="../assets/images/img_bear.svg" class="img-bear">
 
     <div class="block-glass">
       <p class="fz-h3 w_100">Hi ! 恭喜你加入熊抱科技~<br>
@@ -19,7 +19,7 @@
         <i class="i-task"></i>
       </div>
 
-      <RouterLink to="/" @click="$emit('setProgressRate', 10)">
+      <RouterLink to="/" @click="$emit('setProgressRate', 0)">
         <div class="btn-primary">
           <p class="txt-neu fz-h2">Restart</p>
         </div>
