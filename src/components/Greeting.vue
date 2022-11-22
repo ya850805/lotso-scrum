@@ -3,6 +3,7 @@
   <section class="content-card flex-col flex-sb">
 
     <img src="../assets/images/img_po.png" class="img-po"/>
+    <img src="../assets/images/img_bear.png" class="img-bear">
 
     <div class="block-glass">
       <p class="fz-h3 w_100">Hi ! 歡迎加入熊抱科技~<br>
@@ -24,6 +25,7 @@
         </div>
       </RouterLink>
     </div>
+
   </section>
 </template>
 

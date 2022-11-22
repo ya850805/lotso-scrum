@@ -13,8 +13,10 @@ function setProgressRate(n) {
   <header>
     <img src="./assets/images/img_logo.svg" class="img-logo"/>
     <!--TODO progress bar-->
-    <div>
-      進度：{{progressRate}}
+    <div class="outside-progress">
+      <div class="inner-progress flex_row flex_cc">
+        <p class="fz-h2 txt-progress">{{progressRate}}%</p>
+      </div>
     </div>
 
   </header>

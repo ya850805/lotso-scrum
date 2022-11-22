@@ -41,6 +41,7 @@ a {
     /*shadow-variables*/
     --inner-glass: inset 3px 3px 4px rgba(114, 114, 114, 0.4);
     --outside-glass: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    --outside-hover: 0px 10px 20px var(--white-70);
 
     --up-neum: 5px 5px 10px rgba(117, 127, 138, 0.5);
     --down-neum: inset -5px -5px 10px -2px rgba(255, 255, 255, 0.5), inset 5px 5px 10px -2px rgba(117, 127, 138, 0.5);;
