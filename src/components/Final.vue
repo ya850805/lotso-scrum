@@ -1,12 +1,32 @@
 <!--page8-->
 
 <template>
-  Hi ! 恭喜你加入熊抱科技~
-  成功通過Scrum新手村的挑戰任務吧！
+  <section class="final-card flex-col flex-sb">
 
+    <img src="../assets/images/img_group.png" class="img-po"/>
+    <img src="../assets/images/img_bear.svg" class="img-bear">
 
+    <div class="block-glass">
+      <p class="fz-h3 w_100">Hi ! 恭喜你加入熊抱科技~<br>
+        成功通過Scrum新手村的挑戰任務吧！<br><br><br>
+        正式加入熊抱科技開發A組！～～～～
+      </p>
+    </div>
 
-  正式加入熊抱科技開發A組！
+    <div class="block-btn">
+      <div class="flex-row flex-cs">
+        <p class="fz-h1 txt-neu">完成任務</p>
+        <i class="i-task"></i>
+      </div>
+
+      <RouterLink to="/" @click="$emit('setProgressRate', 0)">
+        <div class="btn-primary">
+          <p class="txt-neu fz-h2">Restart</p>
+        </div>
+      </RouterLink>
+    </div>
+
+  </section>
 </template>
 
 <script setup>
