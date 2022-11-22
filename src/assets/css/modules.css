@@ -1,0 +1,44 @@
+/*可重覆性的元件樣式*/
+.btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 193px;
+    height: 72px;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 20px;
+
+    text-align: center;
+    color: var(--primary);
+    box-shadow: var(--up-neum);
+    background: var(--gradient-neu);
+}
+
+
+.txt-neu {
+    background-color: var(--primary);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
+}
+
+i {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+}
+
+.i-task {
+    background-image: url("../icon/i_task.svg");
+}
+
+.img-po {
+    position: absolute;
+    left: 70px;
+    bottom: 105px;
+    width: 298px;
+    height: 554px;
+    background-repeat: no-repeat;
+    z-index: 10;
+}

@@ -11,7 +11,7 @@ function setProgressRate(n) {
 
 <template>
   <header>
-    <img src="./assets/img_logo.svg" class="img-logo">
+    <img src="./assets/images/img_logo.svg" class="img-logo"/>
     <!--TODO progress bar-->
     <div>
       進度：{{progressRate}}
