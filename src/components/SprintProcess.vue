@@ -83,7 +83,6 @@ const review = ref([])
 const retrospective = ref([])
 let fromBlock
 const router = useRouter()
-const emit = defineEmits(['setProgressRate'])
 
 function startDrag(from) {
   fromBlock = from
@@ -120,7 +119,6 @@ function submit() {
   router.push({
     name: 'retro-item'
   })
-  emit('setProgressRate', 70)
 }
 
 </script>
