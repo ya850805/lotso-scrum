@@ -54,7 +54,10 @@
     height: 130px;
     box-shadow: var(--up-neum);
     border-radius: 100%;
-    background: var(--gradient-bg);
+    background: #F6E7D8;
+    /*transition: background 0.5s linear;*/
+    transition: background 0.4s;
+    z-index: 10;
 }
 
 .inner-progress {

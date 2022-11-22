@@ -32,10 +32,10 @@ a {
     --info-ta2: #faf7f2;
 
     /*gradient-variables*/
-    --gradient-primary: linear-gradient(270deg, #FF6A6A 0%, #FF6B96 33.85%, #FD87FF 70.31%, #BB85FF 100%);
+    --gradient-primary: linear-gradient(270deg, #FF6A6A 0%, #FF6B96 45%, #FD87FF 70%, #BB85FF 100%);
     --gradient-sec: linear-gradient(180deg, rgba(255, 106, 106, 0.3) 0%, #BB85FF 100%);
     --gradient-thi: linear-gradient(180deg, rgba(255, 106, 106, 0.3) 0%, #BB85FF 100%);
-    --gradient-bg: linear-gradient(180.42deg, #FFF1E0 0.29%, #FFEBEB 99.55%);
+    --gradient-bg: linear-gradient(180deg, #FFF1E0 0.29%, #FFEBEB 99.55%);
     --gradient-neu: linear-gradient(180deg, #EBEDF0 0%, #F2F4F6 100%);
 
     /*shadow-variables*/
