@@ -58,6 +58,7 @@
 <script setup>
 import {ref} from "vue";
 import {RETRO_ITEMS} from "@/constant/const";
+import {onMounted} from "vue";
 
 const retroItems = ref(RETRO_ITEMS)
 const wellDone = ref([])
@@ -68,7 +69,7 @@ function submit() {
   alert("12345");
 }
 
-import {onMounted} from "vue";
+
 const emit = defineEmits(['setProgressRate'])
 
 onMounted(() => {
