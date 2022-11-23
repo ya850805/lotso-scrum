@@ -30,6 +30,7 @@
 </template>
 
 <script setup>
+import CharTheme from './theme/ChatTheme.vue'
 import {onMounted} from "vue";
 const emit = defineEmits(['setProgressRate'])
 

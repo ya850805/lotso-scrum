@@ -17,6 +17,10 @@
     transform: perspective(1px) translateZ(0)
 }
 
+.btn-primary.bg-next {
+    background: var(--primary);
+}
+
 .btn-primary:hover {
     box-shadow: var(--outside-hover);
 }
@@ -37,7 +41,7 @@
 
 .btn-primary:hover::before {
     transform: scale(1);
-    box-shadow: var(--outside-hover);
+    /*box-shadow: var(--outside-hover);*/
 }
 
 .btn-primary:hover .txt-neu {
@@ -54,7 +58,7 @@
     height: 130px;
     box-shadow: var(--up-neum);
     border-radius: 100%;
-    background:#F6E7D8;
+    background: #F6E7D8;
     z-index: 10;
     /*animation: barin 1s ease;*/
     /*opacity: 0.6;*/
@@ -88,6 +92,13 @@
     -webkit-background-clip: text;
     color: transparent;
     text-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
+}
+
+.btn-primary.bg-next .txt-neu{
+    color: var(--white);
+    text-shadow: transparent;
+    /*background: var(--white);*/
+    /*color: var(--white-70);*/
 }
 
 .txt-progress {
@@ -160,15 +171,15 @@ i {
 
 
 /*//CSS*/
-@keyframes leftIn {
-    0% {
-        right: -100px;
-    }
+/*@keyframes leftIn {*/
+/*    0% {*/
+/*        right: -100px;*/
+/*    }*/
 
-    100% {
-        right: 0;
-    }
-}
+/*    100% {*/
+/*        right: 0;*/
+/*    }*/
+/*}*/
 
 /*@keyframes handShake {*/
 /*    0% {*/
