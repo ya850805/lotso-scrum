@@ -21,7 +21,6 @@ function setProgressRate(n) {
         <p class="fz-h2 txt-progress">{{ progressRate }}%</p>
       </div>
     </div>
-
   </header>
 
   <RouterView @set-progress-rate="setProgressRate"/>
