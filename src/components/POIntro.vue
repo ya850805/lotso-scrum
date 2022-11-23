@@ -18,7 +18,7 @@
 
       <template #image><span></span></template>
         <template #btn>
-          <RouterLink to="/po-intro">
+          <RouterLink to="/manage-task">
             <div class="btn-primary bg-next">
               <p class="txt-neu fz-h2">Next</p>
             </div>
