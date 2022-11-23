@@ -54,11 +54,22 @@
     height: 130px;
     box-shadow: var(--up-neum);
     border-radius: 100%;
-    background: #F6E7D8;
-    /*transition: background 0.5s linear;*/
-    transition: background 0.4s;
+    background:#F6E7D8;
     z-index: 10;
+    /*animation: barin 1s ease;*/
+    /*opacity: 0.6;*/
 }
+
+@keyframes barIn {
+    0% {
+        box-shadow: inset 0px 40px 10px rgba(246, 231, 216, 0.9);
+    }
+
+    100% {
+        box-shadow: inset 0px 100px 10px rgba(246, 231, 216, 0.9);
+    }
+}
+
 
 .inner-progress {
     width: 100px;

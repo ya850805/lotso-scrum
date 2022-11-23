@@ -67,6 +67,13 @@ function submit() {
   //TODO validate retro item
   alert("12345");
 }
+
+import {onMounted} from "vue";
+const emit = defineEmits(['setProgressRate'])
+
+onMounted(() => {
+  emit('setProgressRate', 90)
+})
 </script>
 
 <style scoped>

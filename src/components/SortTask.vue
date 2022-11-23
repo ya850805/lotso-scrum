@@ -47,7 +47,7 @@
 
 
   <br>
-  <RouterLink to="/sprint-calendar" @click="$emit('setProgressRate', 50); submit()">Submit</RouterLink>
+  <RouterLink to="/sprint-calendar" @click="submit()">Submit</RouterLink>
 </template>
 
 <script setup>
@@ -85,6 +85,13 @@ function submit() {
 
   console.log(finalTaskArray.value)
 }
+
+const emit = defineEmits(['setProgressRate'])
+
+onMounted(() => {
+  emit('setProgressRate', 50)
+})
+
 
 </script>
 

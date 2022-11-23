@@ -74,7 +74,7 @@
 
 <script setup>
 import {SPRINT_MEETINGS} from "@/constant/const";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import {useRouter} from "vue-router/dist/vue-router";
 
 const meetings = ref(SPRINT_MEETINGS)
@@ -121,6 +121,11 @@ function submit() {
   })
 }
 
+const emit = defineEmits(['setProgressRate'])
+
+onMounted(() => {
+  emit('setProgressRate', 75)
+})
 </script>
 
 <style scoped>
