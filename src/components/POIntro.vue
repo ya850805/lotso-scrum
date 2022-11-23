@@ -17,13 +17,13 @@
       </template>
 
       <template #image><span></span></template>
-        <template #btn>
-          <RouterLink to="/manage-task">
-            <div class="btn-primary bg-next">
-              <p class="txt-neu fz-h2">Next</p>
-            </div>
-          </RouterLink>
-        </template>
+      <template #btn>
+        <RouterLink to="/manage-task">
+          <div class="btn-primary bg-next">
+            <p class="txt-neu fz-h2">Next</p>
+          </div>
+        </RouterLink>
+      </template>
     </ChatTheme>
 
   </section>

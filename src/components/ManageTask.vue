@@ -13,7 +13,7 @@
     <option>選項</option>
     <option v-for="point in taskPointArray" :value="point">{{point}}</option>
   </select><br>
-  <button @click="addTask()">Add</button>
+  <button @click="addTask">Add</button>
 
   <hr>
 
@@ -51,6 +51,10 @@
 
   <br>
 
+  <XXX v-show="isShow" @closeAlert="isShow = false">
+    <template></template>
+  </XXX>
+
   <RouterLink to="/scrum-intro" @click="submit()">Submit</RouterLink>
 </template>
 
@@ -58,6 +62,7 @@
 import {onMounted, ref} from "vue";
 import {INIT_SCRUM_TASK, TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
 import {TASK_NAME_IS_BLANK} from "@/constant/error";
+import XXX from './theme/XXX.vue';
 
 let taskArray1 = ref(INIT_SCRUM_TASK);
 let taskArray2 = ref([])
@@ -67,12 +72,14 @@ let taskName = ref("")
 let taskLink = ref("")
 let taskPoint = ref(null)
 
+let isShow = ref(false)
 
-//TODO manage tasks - Add, Delete, Edit
 function addTask() {
   //validation
   if(taskName.value.trim() === "") {
-    alert(TASK_NAME_IS_BLANK)
+    //TODO alert
+    isShow.value = true
+    // alert(TASK_NAME_IS_BLANK)
   } else {
     const task = {
       id: taskArray1.value.length + taskArray2.value.length + 1,
