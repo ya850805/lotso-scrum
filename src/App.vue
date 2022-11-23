@@ -12,9 +12,11 @@ function setProgressRate(n) {
 <template>
   <header>
     <img src="./assets/images/img_logo.svg" class="img-logo"/>
-    <!--TODO progress bar-->
+    <!--TODO progress bar animation-->
     <div class="outside-progress"
-         :style="{background:'linear-gradient(180deg, #F6E7D8 '+ (100-progressRate) + '%, #FF6A6C '+ (100-progressRate) + '%, #FF6B96 45%, #FD87FF 70%, #BB85FF 100%)'}">
+      :style="{'background':'linear-gradient(180deg, #F6E7D8 '+ (100-progressRate) + '%, #FF6A6C '+ (100-progressRate) +
+      '%, #FF6B96 45%, #FD87FF 70%, #BB85FF 100%)',
+      'animation':'barIn 1s'}">
       <div class="inner-progress flex_row flex_cc">
         <p class="fz-h2 txt-progress">{{ progressRate }}%</p>
       </div>
@@ -26,5 +28,6 @@ function setProgressRate(n) {
 </template>
 
 <style scoped>
+
 
 </style>

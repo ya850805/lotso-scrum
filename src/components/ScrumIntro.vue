@@ -7,13 +7,17 @@
   我們平常管理任務是使用 Jira 這套軟體，
   有空先去註冊和熟悉唷！
 
-  <RouterLink to="/sort-task" @click="$emit('setProgressRate', 40)">Next</RouterLink>
+  <RouterLink to="/sort-task">Next</RouterLink>
 </template>
 
 <script setup>
+import {onMounted} from "vue";
+const emit = defineEmits(['setProgressRate'])
 
+onMounted(() => {
+  emit('setProgressRate', 35)
+})
 </script>
-
 <style scoped>
 
 </style>

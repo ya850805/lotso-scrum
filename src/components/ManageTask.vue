@@ -51,7 +51,7 @@
 
   <br>
 
-  <RouterLink to="/scrum-intro" @click="$emit('setProgressRate', 30); submit()">Submit</RouterLink>
+  <RouterLink to="/scrum-intro" @click="submit()">Submit</RouterLink>
 </template>
 
 <script setup>
@@ -66,6 +66,7 @@ let taskPointArray = ref(TASK_STORY_POINTS)
 let taskName = ref("")
 let taskLink = ref("")
 let taskPoint = ref(null)
+
 
 //TODO manage tasks - Add, Delete, Edit
 function addTask() {
@@ -96,6 +97,14 @@ function submit() {
   localStorage.removeItem(TASKS_KEY)
   localStorage.setItem(TASKS_KEY, JSON.stringify(taskArray2.value))
 }
+
+const emit = defineEmits(['setProgressRate'])
+
+onMounted(() => {
+  emit('setProgressRate', 25)
+})
+
+
 </script>
 
 <style scoped>
