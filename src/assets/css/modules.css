@@ -1,20 +1,296 @@
 /*可重覆性的元件樣式*/
+/* @區塊-block ---------------------------------------------------------------------------------------------- */
+.block-glass {
+    width: fit-content;
+    height: auto;
+    margin: 36px 0;
+    padding: 36px;
+    border-radius: 20px;
+    border: 1px solid var(--white);
+    background-color: var(--white-70);
+    box-shadow: var(--outside-glass);
+}
+
+.content-card .block-glass, .final-page block-glass,
+.content-pop .block-glass {
+    width: 100%;
+    height: 55%;
+    padding: 48px 48px 24px 240px;
+    border-radius: 0;
+    margin: 0;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+}
+
+.final-page .block-glass {
+    padding: 48px 48px 24px 550px;
+}
+
+.content-pop .block-glass {
+    padding: 48px;
+    width: 50vw;
+    height: 26vh;
+    z-index: inherit;
+}
+
+.block-btn {
+    width: 100%;
+    height: 45%;
+    background: var(--gradient-primary);
+    box-shadow: var(--outside-glass), var(--inner-glass);
+    border-radius: 0 0 60px 60px;
+    padding: 24px 240px;
+}
+
+.content-pop .block-btn {
+    padding: 48px;
+    width: 50vw;
+    height: 20vh;
+    z-index: inherit;
+}
+
+.final-page .block-btn {
+    padding: 24px 240px;
+}
+
+.block-chat {
+    width: fit-content;
+    height: auto;
+    padding: 36px;
+    background-color: var(--white-70);
+    box-shadow: var(--outside-glass);
+    border: 1px solid var(--white);
+    border-radius: 20px;
+    margin: 36px 36px 0px 420px;
+}
+
+.block-chat:before {
+    position: absolute;
+    content: "";
+    border-width: 25px 25px 10px 0px;
+    border-style: solid;
+    border-color: transparent var(--white-70);
+    bottom: 20px;
+    left: -25px;
+}
+
+.block-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    padding: 36px;
+    border-radius: 20px;
+    background: var(--gradient-bg);
+    box-shadow: var(--outside-glass);
+}
+
+
+.block-info > .flex-cb > i {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.list-group {
+    width: 70%;
+}
+
+.list-area {
+    position: relative;
+    width: 360px;
+    height: 350px;
+    max-width: 360px;
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 16px;
+}
+
+/* -- 元件 Type: 捲軸 -- */
+/* ---捲軸底色--- */
+.list-area::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: var(--down-neum);
+    border-radius: 10px;
+}
+
+/* ---捲軸寬度--- */
+.list-area::-webkit-scrollbar {
+    position: relative;
+    width: 8px;
+    background-color: transparent;
+}
+
+/* ---捲軸本體顏色--- */
+.list-area::-webkit-scrollbar-thumb {
+    background: var(--gradient-sec);
+    border-radius: 10px;
+}
+
+.list-group-item {
+    position: relative;
+    width: 330px;
+    height: 72px;
+    margin: 24px 24px 0 0;
+    padding: 16px;
+    background: var(--white);
+    box-shadow: var(--up-neum);
+    border-radius: 20px;
+    /*color: var(--txt-placeholder);*/
+}
+
+.list-group-item > p {
+    text-align: center;
+    margin: 0 8px;
+}
+
+.block-info .list-group-item {
+    margin: 16px 8px 0 0;
+}
+
+.block-info > p {
+    width: 100%;
+    color: var(--primary);
+    text-align: right;
+    margin: 4px 0;
+}
+
+.item-more {
+    position: absolute;
+    right: -72px;
+    padding: 16px;
+    height: 72px;
+    background: var(--white);
+    box-shadow: var(--down-neum);
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 10;
+}
+
+.card-tag {
+    width: 260px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    padding: 24px 16px;
+    background: var(--white);
+    box-shadow: var(--down-neum);
+    border-radius: 20px;
+    color: var(--txt-placeholder);
+}
+
+input.card-tag {
+    width: 240px;
+    height: 47px;
+    margin-right: 24px;
+}
+
+input::placeholder {
+    font-weight: normal;
+}
+
+input:focus,
+select:focus {
+    background: var(--white);
+    margin-top: 16px;
+    padding: 24px 16px;
+    box-shadow: var(--up-neum);
+}
+
+/*//TODO select*/
+/*select:before {*/
+/*    content: '';*/
+/*    background-size: 24px 24px;*/
+/*    background-position: calc(100% - 24px) center;*/
+
+/*    background: #fff url("../icon/i_down.svg") no-repeat;*/
+/*    background-position: right 20px center;*/
+/*}*/
+
+/*.select_style {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    height: 40px;*/
+/*    background: #fff url("../images/icon/i_select.svg") no-repeat;*/
+/*    background-position: right 20px center;*/
+/*    padding: 10px 24px 10px 20px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.select_style + .select_dropdown {*/
+/*    display: none;*/
+/*    width: 100%;*/
+/*    max-height: 350px;*/
+/*    margin-top: 4px;*/
+/*    position: absolute;*/
+/*    padding: 4px;*/
+/*    background-color: #fff;*/
+/*    border: 1px solid rgba(0, 0, 0, 0.15);*/
+/*    overflow-y: auto;*/
+/*    z-index: 1;*/
+/*}*/
+
+/*.select_style.active + .select_dropdown,*/
+/*.select_style.active ~ .select_overlay {*/
+/*    display: block;*/
+/*}*/
+
+/*.select_option {*/
+/*    width: 100%;*/
+/*    border-radius: 4px;*/
+/*    padding: 0.5rem 0.5rem 0.5rem 1rem;*/
+/*}*/
+
+/*.select_option:hover {*/
+/*    background-color: var(--primary);*/
+/*    color: #fff;*/
+/*}*/
+
+/*.select_overlay {*/
+/*    display: none;*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    opacity: 0;*/
+/*}*/
+
+select.card-tag {
+    width: 100px;
+    height: 47px;
+    font-weight: normal;
+    padding: 0 16px;
+    margin-right: 24px;
+}
+
+.card-tag > .fz-h3 {
+    color: var(--txt-placeholder);
+    text-align: center;
+}
+
+
 /* @元件-按鈕 ---------------------------------------------------------------------------------------------- */
 .btn-primary {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 193px;
-    height: 72px;
+    height: 64px;
     margin-top: 16px;
-    padding: 16px;
     border-radius: 20px;
 
     text-align: center;
     color: var(--primary);
     box-shadow: var(--up-neum);
     background: var(--gradient-neu);
-    transform: perspective(1px) translateZ(0)
+    transform: perspective(1px) translateZ(0);
+
 }
 
 .btn-primary.bg-next {
@@ -41,12 +317,36 @@
 
 .btn-primary:hover::before {
     transform: scale(1);
-    /*box-shadow: var(--outside-hover);*/
+    box-shadow: var(--outside-hover);
 }
 
 .btn-primary:hover .txt-neu {
     color: var(--white) !important;
 }
+
+.content-pop .btn-primary {
+    margin: 0;
+}
+
+
+.btn-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 47px;
+    text-align: center;
+    box-shadow: var(--up-neum);
+    background: var(--gradient-neu);
+    border-radius: 20px;
+}
+
+.btn-sec p {
+    color: var(--primary);
+}
+
+/* @元件-draggable ------------------------------------------------------------------------------------------- */
+
 
 /* @元件-progress bar ---------------------------------------------------------------------------------------------- */
 
@@ -84,6 +384,38 @@
     z-index: 10;
 }
 
+/* @tag-point ---------------------------------------------------------------------------------------------- */
+.tag-point {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border: 2px solid var(--white);
+    border-radius: 4px;
+    padding-bottom: 4px;
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.7), inset 1px 1px 1px rgba(174, 174, 192, 0.15), -1px -1px 3px #FFFFFF, 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
+    background-color: #F0F0F3;
+}
+
+.tag-point p {
+    color: var(--primary);
+    text-align: center;
+}
+
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 8;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--gradient-bg);
+    background-image: url("../images/img_bg.png");
+    background-size: cover;
+}
 
 /* @文字-txt ---------------------------------------------------------------------------------------------- */
 
@@ -94,7 +426,7 @@
     text-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
 }
 
-.btn-primary.bg-next .txt-neu{
+.btn-primary.bg-next .txt-neu {
     color: var(--white);
     text-shadow: transparent;
     /*background: var(--white);*/
@@ -112,97 +444,106 @@
 
 /* @圖示-icon ---------------------------------------------------------------------------------------------- */
 
-i {
+i, img {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.i-arrow {
+    margin: 16px 8px;
+    min-width: 30px;
+    min-height: 30px;
+    background-image: url("../icon/i_arrow.svg");
+}
+
+.i-delete {
+    min-width: 24px;
+    min-height: 24px;
+    background-image: url("../icon/i_delete.svg");
+    cursor: pointer;
+}
+
+.i-more {
     display: inline-block;
-    width: 120px;
-    height: 120px;
+    width: 24px;
+    height: 24px;
+    /*background-image: url("../icon/i_more.svg");*/
+    cursor: pointer;
+    /*filter: drop-shadow(0px 0 var(--primary));*/
+}
+
+
+.i-link {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    background-image: url("../icon/i_link.svg");
 }
 
 .i-task {
+    min-width: 100px;
+    min-height: 100px;
     background-image: url("../icon/i_task.svg");
+}
+
+.i-po {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_po.svg");
 }
 
 /* @圖示-image ---------------------------------------------------------------------------------------------- */
 
 .img-po {
     position: absolute;
-    left: 70px;
-    bottom: 105px;
-    width: 298px;
-    height: 554px;
-    background-repeat: no-repeat;
+    left: 0px;
+    bottom: 0px;
     z-index: 10;
 }
 
-.final-card .img-po {
-    width: 486px;
-    height: 420px;
+.content-card .img-po {
+    left: 70px;
+    bottom: 105px;
+}
+
+.final-page .img-po {
     left: 130px;
     top: 0;
-    background-size: 80%;
 }
+
+.img-chat {
+    position: absolute;
+    left: 220px;
+    top: 16px;
+    z-index: 10;
+}
+
 
 .img-bear {
     position: absolute;
-    right: -48px;
+    right: -60px;
     bottom: -48px;
-    width: 523px;
-    height: 559px;
-    background-repeat: no-repeat;
     z-index: 10;
-    /*transform-origin: 100px 50px;*/
-    animation-name: leftIn;
-    animation-duration: .8s, 1.6s;
-    /*animation-timing-function: ease-in-out, ease-in-out;*/
-    /*animation-delay: 1s, 2s;*/
-    /*animation-iteration-count: 1, 8;*/
-    /*animation-fill-mode: both, both;*/
+
 }
 
-/*.handShake{*/
-/*    transform-origin: 100px 50px;*/
-/*    animation-name: handShake;*/
-/*    animation-duration: .8s, 1.6s;*/
-/*    animation-timing-function: ease-in-out, ease-in-out;*/
-/*    animation-delay: 1s, 2s;*/
-/*    animation-iteration-count: 1, 8;*/
-/*    animation-fill-mode: both, both;*/
-/*}*/
+.animate__fadeInRight {
+    animation: animate__fadeInRight 2s;
+}
+.slideInLeft{
+    animation: slideInLeft 2s;
+}
+.animate__slideOutLeft{
+    animation: animate__slideOutLeft 2s;
 
+}
 
-/*//CSS*/
-/*@keyframes leftIn {*/
-/*    0% {*/
-/*        right: -100px;*/
-/*    }*/
+.animate__pulse {
+    animation: animate__pulsepulse 2s infinite;
+}
 
-/*    100% {*/
-/*        right: 0;*/
-/*    }*/
-/*}*/
-
-/*@keyframes handShake {*/
-/*    0% {*/
-/*        transform: rotate(0deg);*/
-/*    }*/
-
-/*    14.3% {*/
-/*        transform: rotate(-9deg);*/
-/*    }*/
-
-/*    25.7% {*/
-/*        transform: rotate(-1deg);*/
-/*    }*/
-
-/*    34.3% {*/
-/*        transform: rotate(-10deg);*/
-/*    }*/
-
-/*    42.9% {*/
-/*        transform: rotate(0deg);*/
-/*    }*/
-
-/*    100% {*/
-/*        transform: rotate(0deg);*/
-/*    }*/
-/*}*/
+.animate__shakeX {
+    animation: animate__shakeX 2s infinite;
+}

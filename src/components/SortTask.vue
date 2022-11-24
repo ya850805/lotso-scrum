@@ -20,7 +20,7 @@
       <div class="list-group-item">
         <select :value="element.points" @change="editPoint(1, element.id, $event)">
           <option>選項</option>
-          <option v-for="point in taskPointArray" :value="point">{{point}}</option>
+          <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
         </select> -- {{ element.name }} -- {{ element.link }}
       </div>
     </template>
@@ -37,12 +37,15 @@
       @change="checkNullPoint"
   >
     <template #item="{ element, index }">
-      <div class="list-group-item">
+      <div class="list-group-item flex-row flex-cb">
         <select :value="element.points" @change="editPoint(2, element.id, $event)">
-          <option v-for="point in taskPointArray" :value="point">{{point}}</option>
-        </select> -- {{ element.name }} -- {{ element.link }}
+          <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
+        </select>
+        <p>{{ element.name }}</p>
+        <a href="{{ element.link }}"><i class="i-link"></i></a>
       </div>
     </template>
+
   </draggable>
 
 
@@ -69,7 +72,7 @@ function editPoint(from, id, event) {
 
 function checkNullPoint() {
   const nullPointTasks = finalTaskArray.value.filter(task => task.points == null)
-  if(nullPointTasks.length != 0) {
+  if (nullPointTasks.length != 0) {
     alert("you had add null point task!")
     finalTaskArray.value = finalTaskArray.value.filter(task => task.points != null)
     taskArray.value.push(nullPointTasks[0])
