@@ -1,6 +1,6 @@
 <!--page7-->
 <template>
-  <section class="flex-col">
+  <section class="flex-col flex-cc w-100 retro-lst">
     <div class="flex-row">
       <img src="../assets/images/img_master_chat.png" width="158" height="158" class="img-chat"/>
       <ChatTheme>
@@ -13,55 +13,73 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-ss flex-wrap"
+        class="list-group flex-row flex-sc flex-wrap w-100"
         :list="retroItems"
         group="retroItem"
         itemKey="id"
     >
       <template #item="{ element, index }">
-        <div class="list-group-item">
-          {{ element.mood }} -- {{ element.description }}
+        <div class="flex-row flex-cb list-group-item">
+          <span class="tag-point"><p class="flex-cc">{{ element.mood }}</p></span>
+          <p class="flex-cc">{{ element.description }}</p>
         </div>
       </template>
     </draggable>
 
-    <hr>
-    <h2>做得好的地方</h2>
-    <draggable
-        class="list-group"
-        :list="wellDone"
-        group="retroItem"
-        itemKey="id"
-    >
-      <template #item="{ element, index }">
-        <div class="list-group-item">
-          {{ element.mood }} -- {{ element.description }}
+    <div class="block-info flex-col flex-cc ">
+      <i class="i-retro"></i>
+      <div class="flex-row">
+        <div class="flex_col">
+          <p class="fz-h3">做得好的地方</p>
+          <div class="order-list">
+            <div class="list-group-item"></div>
+            <div class="list-group-item"></div>
+          </div>
+          <draggable
+              class="list-area sprint-list flex-col flex-cs"
+              :list="wellDone"
+              group="retroItem"
+              itemKey="id"
+          >
+            <template #item="{ element, index }">
+              <div class="flex-row flex-cb list-group-item">
+                <span class="tag-point"><p class="flex-cc">{{ element.mood }}</p></span>
+                <p class="flex-cc">{{ element.description }}</p>
+              </div>
+            </template>
+          </draggable>
         </div>
-      </template>
-    </draggable>
+        <div class="flex_col">
+          <p class="fz-h3">待改進的地方</p>
 
-    <hr>
-    <h2>待改進的地方</h2>
-    <draggable
-        class="list-group"
-        :list="needImprovement"
-        group="retroItem"
-        itemKey="id"
-    >
-      <template #item="{ element, index }">
-        <div class="list-group-item">
-          {{ element.mood }} -- {{ element.description }}
+          <div class="order-list">
+            <div class="list-group-item"></div>
+            <div class="list-group-item"></div>
+          </div>
+
+          <draggable
+              class="list-area sprint-list flex-col flex-cs"
+              :list="needImprovement"
+              group="retroItem"
+              itemKey="id"
+          >
+            <template #item="{ element, index }">
+              <div class="flex-row flex-cb list-group-item">
+                <span class="tag-point"><p class="flex-cc">{{ element.mood }}</p></span>
+                <p class="flex-cc">{{ element.description }}</p>
+              </div>
+            </template>
+          </draggable>
+
         </div>
-      </template>
-    </draggable>
 
-    <hr>
-    <!--TODO  retro item draggable-->
-    <!--  <button @click="submit">Submit</button>-->
-<!--    <RouterLink to="/final" @click="submit">submit</RouterLink>-->
-    <button @click="submit" class="btn-primary bg-next animate__pulse">
-      <p class="txt-neu fz-h2">Submit</p>
-    </button>
+
+      </div>
+      <button @click="submit" class="btn-primary bg-next animate__pulse">
+        <p class="txt-neu fz-h2">Submit</p>
+      </button>
+    </div>
+
   </section>
 </template>
 
