@@ -113,7 +113,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {INIT_SCRUM_TASK, TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
-import {ORDER_IS_EMPTY, TASK_NAME_IS_BLANK} from "@/constant/error";
+import {ORDER_IS_EMPTY, TASK_LINK_IS_INVALID, TASK_NAME_IS_BLANK} from "@/constant/error";
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
@@ -137,10 +137,11 @@ let alertBtnMessage = ref("OK")
 function addTask() {
   //validation
   if (taskName.value.trim() === "") {
-    //TODO alert
-    isShow.value = true
     alertMessage.value = TASK_NAME_IS_BLANK
-    // alert(TASK_NAME_IS_BLANK)
+    isShow.value = true
+  } else if (taskLink.value.trim() != "" && !taskLink.value.startsWith("http://") && !taskLink.value.startsWith("https://")) {
+    alertMessage.value = TASK_LINK_IS_INVALID
+    isShow.value = true
   } else {
     const task = {
       id: taskArray1.value.length + taskArray2.value.length + 1,
@@ -171,7 +172,6 @@ function submit() {
     router.push({
       name: 'scrum-intro'
     })
-
   }
 }
 
