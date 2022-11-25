@@ -20,7 +20,11 @@
     >
       <template #item="{ element, index }">
         <div class="flex-row flex-cb list-group-item">
-          <span class="tag-point"><p class="flex-cc">{{ element.mood }}</p></span>
+          <span class="tag-point">
+            <img v-if="element.mood === 0" width="32" height="32" src="../assets/icon/i_happy.svg" />
+            <img v-if="element.mood === 1" width="32" height="32"  src="../assets/icon/i_sad.svg"/>
+            <!--            <p class="flex-cc">{{ element.mood }}</p>-->
+          </span>
           <p class="flex-cc">{{ element.description }}</p>
         </div>
       </template>

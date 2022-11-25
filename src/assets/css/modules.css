@@ -111,6 +111,11 @@
     height: 100%;
 }
 
+.list-group {
+    width: 1200px !important;
+}
+
+
 .list-area {
     position: relative;
     left: 2px;
@@ -179,8 +184,9 @@
 .order-list.sprint-list {
     top: 144px;
 }
-.retro-lst .order-list{
-    top:40px;
+
+.retro-lst .order-list {
+    top: 40px;
     margin: 0;
 }
 
@@ -614,7 +620,7 @@ i, img {
     background-image: url("../icon/i_meeting.svg");
 }
 
-.i-retro{
+.i-retro {
     position: absolute;
     top: -20px;
     right: 36px;
