@@ -38,7 +38,7 @@
 
 
         <select v-model="taskPoint" class="card-tag">
-          <option value=null>選項</option>
+          <option value="">選項</option>
           <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
         </select>
       </div>
@@ -54,7 +54,7 @@
       <template #item="{ element, index }">
         <div class="flex-row flex-cb list-group-item">
           <span class="tag-point">
-            <p class="flex-cc">{{ element.points }}</p></span>
+            <p class="flex-cc">{{ element.points === "" ? '?' : element.points }}</p></span>
           <p class="flex-cc">{{ element.name }}</p>
           <button @click="element.isToggleOpen = !element.isToggleOpen">
             <i class="i-more"
@@ -91,7 +91,7 @@
 
         <template #item="{ element, index }">
           <div class="flex-row flex-cb list-group-item">
-            <span class="tag-point"><p class="flex-cc">{{ element.points }}</p></span>
+            <span class="tag-point"><p class="flex-cc">{{ element.points === "" ? '?' : element.points }}</p></span>
             <p class="flex-cc">{{ element.name }}</p>
             <a href="{{ element.link }}"><i class="i-link"></i></a>
           </div>
@@ -126,7 +126,7 @@ let taskPointArray = ref(TASK_STORY_POINTS)
 
 let taskName = ref("")
 let taskLink = ref("")
-let taskPoint = ref(null)
+let taskPoint = ref("")
 
 //is alert show
 let isShow = ref(false)

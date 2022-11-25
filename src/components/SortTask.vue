@@ -14,9 +14,10 @@
     <div class="flex-col block-glass">
       <p> 你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！<br>
         點數共有1 、2 、3 、5 、8 、13 、21，Point越大代表花費時間越多~<br></p>
-      <p class="flex-row">點選
-      <div class="tag-point"><p class="flex-cc">8</p></div>
-      即可選擇點數~</p>
+      <div class="flex-row font-default">點選
+        <div class="tag-point"><p class="flex-cc">8</p></div>
+        即可選擇點數~
+      </div>
     </div>
     <draggable
         class="list-group flex-row flex-ss flex-wrap"
@@ -29,8 +30,9 @@
           <!--          <span class="tag-point"><p class="flex-cc">{{ element.points }}</p></span>-->
           <!--          <span class="tag-point"><p class="flex-cc">{{ element.points }}</p></span>-->
 
-          <select :value="element.points" @change="editPoint(1, element.id, $event)" class="tag-point color_primary">
-            <option>選項</option>
+          <select v-model="element.points" @change="editPoint(1, element.id, $event)" class="tag-point color_primary">
+            <option disabled>選項</option>
+            <option value="" disabled>?</option>
             <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
           </select>
           <p class="flex-cc">{{ element.name }}</p>
@@ -104,20 +106,20 @@ let alertBtnMessage = ref("OK")
 
 
 function editPoint(from, id, event) {
-  const editPoint = parseInt(event.target.value)
+  const editPoint = event.target.value === "" ? "" : parseInt(event.target.value)
   if (from == 1) {
-    taskArray.value.filter(task => task.id = id)[0].points = editPoint
+    taskArray.value.filter(task => task.id === id)[0].points = editPoint
   } else if (from == 2) {
-    finalTaskArray.value.filter(task => task.id = id)[0].points = editPoint
+    finalTaskArray.value.filter(task => task.id === id)[0].points = editPoint
   }
 }
 
 function checkNullPoint() {
-  const nullPointTasks = finalTaskArray.value.filter(task => task.points == null)
+  const nullPointTasks = finalTaskArray.value.filter(task => task.points === "")
   if (nullPointTasks.length != 0) {
     alertMessage.value = POINT_IS_EMPTY
     isShow.value = true
-    finalTaskArray.value = finalTaskArray.value.filter(task => task.points != null)
+    finalTaskArray.value = finalTaskArray.value.filter(task => task.points != "")
     taskArray.value.push(nullPointTasks[0])
   }
 }

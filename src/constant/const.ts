@@ -5,7 +5,7 @@ export const INIT_SCRUM_TASK = [
         id: 1,
         name: "會員系統(登入、註冊、權限管理)",
         link: "https://www.atlassian.com/software/jira",
-        points: null,
+        points: "",
         isToggleOpen: false
     },
     {
