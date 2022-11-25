@@ -38,7 +38,7 @@
 
 
         <select v-model="taskPoint" class="card-tag">
-          <option value=null>選項</option>
+          <option value="">選項</option>
           <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
         </select>
       </div>
@@ -54,7 +54,7 @@
       <template #item="{ element, index }">
         <div class="flex-row flex-cb list-group-item">
           <span class="tag-point">
-            <p class="flex-cc">{{ element.points }}</p></span>
+            <p class="flex-cc">{{ element.points === "" ? '?' : element.points }}</p></span>
           <p class="flex-cc">{{ element.name }}</p>
           <button @click="element.isToggleOpen = !element.isToggleOpen">
             <i class="i-more"
@@ -62,7 +62,7 @@
           </button>
 
           <div v-show="element.isToggleOpen" class="item-more slideInLeft flex-row flex-cc">
-            <a href="{{ element.link }}"><i class="i-link"></i></a>
+            <a :href="element.link" target="_blank"><i class="i-link"></i></a>
             <button @click="deleteTask(element.id)"><i class="i-delete"></i></button>
           </div>
 
@@ -91,9 +91,9 @@
 
         <template #item="{ element, index }">
           <div class="flex-row flex-cb list-group-item">
-            <span class="tag-point"><p class="flex-cc">{{ element.points }}</p></span>
+            <span class="tag-point"><p class="flex-cc">{{ element.points === "" ? '?' : element.points }}</p></span>
             <p class="flex-cc">{{ element.name }}</p>
-            <a href="{{ element.link }}"><i class="i-link"></i></a>
+            <a :href="element.link" target="_blank"><i class="i-link"></i></a>
           </div>
         </template>
       </draggable>
@@ -113,7 +113,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {INIT_SCRUM_TASK, TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
-import {ORDER_IS_EMPTY, TASK_NAME_IS_BLANK} from "@/constant/error";
+import {BTN_OK, ORDER_IS_EMPTY, TASK_LINK_IS_INVALID, TASK_NAME_IS_BLANK} from "@/constant/error";
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
@@ -126,21 +126,22 @@ let taskPointArray = ref(TASK_STORY_POINTS)
 
 let taskName = ref("")
 let taskLink = ref("")
-let taskPoint = ref(null)
+let taskPoint = ref("")
 
 //is alert show
 let isShow = ref(false)
 
 let alertMessage = ref("")
-let alertBtnMessage = ref("OK")
+let alertBtnMessage = ref(BTN_OK)
 
 function addTask() {
   //validation
   if (taskName.value.trim() === "") {
-    //TODO alert
-    isShow.value = true
     alertMessage.value = TASK_NAME_IS_BLANK
-    // alert(TASK_NAME_IS_BLANK)
+    isShow.value = true
+  } else if (taskLink.value.trim() != "" && !taskLink.value.startsWith("http://") && !taskLink.value.startsWith("https://")) {
+    alertMessage.value = TASK_LINK_IS_INVALID
+    isShow.value = true
   } else {
     const task = {
       id: taskArray1.value.length + taskArray2.value.length + 1,
@@ -171,7 +172,6 @@ function submit() {
     router.push({
       name: 'scrum-intro'
     })
-
   }
 }
 
