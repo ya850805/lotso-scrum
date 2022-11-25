@@ -62,7 +62,7 @@
           </button>
 
           <div v-show="element.isToggleOpen" class="item-more slideInLeft flex-row flex-cc">
-            <a href="{{ element.link }}"><i class="i-link"></i></a>
+            <a :href="element.link" target="_blank"><i class="i-link"></i></a>
             <button @click="deleteTask(element.id)"><i class="i-delete"></i></button>
           </div>
 
@@ -93,7 +93,7 @@
           <div class="flex-row flex-cb list-group-item">
             <span class="tag-point"><p class="flex-cc">{{ element.points === "" ? '?' : element.points }}</p></span>
             <p class="flex-cc">{{ element.name }}</p>
-            <a href="{{ element.link }}"><i class="i-link"></i></a>
+            <a :href="element.link" target="_blank"><i class="i-link"></i></a>
           </div>
         </template>
       </draggable>

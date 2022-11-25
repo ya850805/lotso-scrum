@@ -36,7 +36,7 @@
             <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
           </select>
           <p class="flex-cc">{{ element.name }}</p>
-          <a href="{{ element.link }}"><i class="i-link"></i></a>
+          <a :href="element.link" target="_blank"><i class="i-link"></i></a>
         </div>
       </template>
     </draggable>
@@ -66,7 +66,7 @@
               <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
             </select>
             <p class="flex-cc">{{ element.name }}</p>
-            <a href="{{ element.link }}"><i class="i-link"></i></a>
+            <a :href="element.link" target="_blank"><i class="i-link"></i></a>
           </div>
         </template>
       </draggable>
@@ -74,9 +74,6 @@
         <p class="txt-neu fz-h2">Submit</p>
       </button>
     </div>
-
-
-    <!--    <RouterLink to="/sprint-calendar" @click="submit()">Submit</RouterLink>-->
 
     <AlertTheme v-show="isShow" @closeAlert="isShow = false" :alertMessage="alertMessage"
                 :alert-btn-message="alertBtnMessage">

@@ -4,28 +4,28 @@ export const INIT_SCRUM_TASK = [
     {
         id: 1,
         name: "會員系統(登入、註冊、權限管理)",
-        link: "https://www.atlassian.com/software/jira",
+        link: "https://ya850805.atlassian.net/browse/LS-1",
         points: "",
         isToggleOpen: false
     },
     {
         id: 2,
         name: "前台職缺列表、應徵",
-        link: "https://www.atlassian.com/software/jira",
+        link: "https://ya850805.atlassian.net/browse/LS-2",
         points: TASK_STORY_POINTS[3],
         isToggleOpen: false
     },
     {
         id: 3,
         name: "應徵者的線上履歷編輯器",
-        link: "https://www.atlassian.com/software/jira",
+        link: "https://ya850805.atlassian.net/browse/LS-3",
         points: TASK_STORY_POINTS[4],
         isToggleOpen: false
     },
     {
         id: 4,
         name: "後台職缺管理功能(資訊上架、下架、顯示資料)",
-        link: "https://www.atlassian.com/software/jira",
+        link: "https://ya850805.atlassian.net/browse/LS-4",
         points: TASK_STORY_POINTS[6],
         isToggleOpen: false
     },
