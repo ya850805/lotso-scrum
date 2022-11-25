@@ -58,7 +58,7 @@
           <p class="flex-cc">{{ element.name }}</p>
           <button @click="element.isToggleOpen = !element.isToggleOpen">
             <i class="i-more"
-               :style="{ 'background-image' : element.isToggleOpen? 'url(src/assets/icon/i_back.svg)' : 'url(src/assets/icon/i_more.svg)' }"></i>
+               :style="{ 'background-image' : element.isToggleOpen? `url(${backIcon})` : `url(${moreIcon})` }"></i>
           </button>
 
           <div v-show="element.isToggleOpen" class="item-more slideInLeft flex-row flex-cc">
@@ -117,6 +117,8 @@ import {BTN_OK, ORDER_IS_EMPTY, TASK_LINK_IS_INVALID, TASK_NAME_IS_BLANK} from "
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
+import backIcon from '@/assets/icon/i_back.svg'
+import moreIcon from '@/assets/icon/i_more.svg'
 
 const router = useRouter()
 
