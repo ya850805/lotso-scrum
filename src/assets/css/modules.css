@@ -91,16 +91,19 @@
     box-shadow: var(--outside-glass);
 }
 
-.block-info.for-date{
+.block-info.for-date {
     width: 100%;
     padding: 24px 36px;
 }
-
 
 .block-info > .flex-cb > i {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.retro-lst .block-info {
+    position: relative;
 }
 
 .list-group {
@@ -118,6 +121,16 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding-bottom: 10px;
+}
+
+.retro-lst .list-area {
+    top: 4px;
+    left: 0;
+    width: 350px;
+    height: 210px;
+    max-width: 350px;
+    max-height: 210px;
+    overflow-y: hidden;
 }
 
 /* -- 元件 Type: 捲軸 -- */
@@ -152,6 +165,7 @@
     border-radius: 20px;
 }
 
+
 .order-list {
     position: absolute;
     top: 120px;
@@ -165,6 +179,10 @@
 .order-list.sprint-list {
     top: 144px;
 }
+.retro-lst .order-list{
+    top:40px;
+    margin: 0;
+}
 
 .list-group-item > p {
     text-align: center;
@@ -173,6 +191,10 @@
 
 .block-info .list-group-item {
     margin: 16px 8px 0 0;
+}
+
+.retro-lst .list-group-item {
+    margin: 24px 24px 0 0;
 }
 
 .block-info > p {
@@ -211,7 +233,8 @@
 .card-tag p {
     color: var(--txt-placeholder);
 }
-.card-tag.w-100{
+
+.card-tag.w-100 {
     height: 180px;
 }
 
@@ -445,7 +468,7 @@ select.card-tag {
 
 .tag-point.for-date {
     width: 60px;
-    height:60px;
+    height: 60px;
     min-width: 60px;
     min-height: 60px;
     margin: 8px;
@@ -508,7 +531,7 @@ select.tag-point {
 .txt-date {
     text-align: center;
     width: 60px;
-    margin:0 8px 8px 8px;
+    margin: 0 8px 8px 8px;
     color: var(--txt-placeholder);
 }
 
@@ -590,6 +613,15 @@ i, img {
     min-width: 100px;
     min-height: 100px;
     background-image: url("../icon/i_meeting.svg");
+}
+
+.i-retro{
+    position: absolute;
+    top: -20px;
+    right: 36px;
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_retro.svg");
 }
 
 
