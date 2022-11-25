@@ -33,6 +33,11 @@
     z-index: inherit;
 }
 
+.block-glass.for-date {
+    margin-left: 200px;
+    padding: 24px 36px;
+}
+
 .block-btn {
     width: 100%;
     height: 45%;
@@ -84,6 +89,11 @@
     border-radius: 20px;
     background: var(--gradient-bg);
     box-shadow: var(--outside-glass);
+}
+
+.block-info.for-date{
+    width: 100%;
+    padding: 24px 36px;
 }
 
 
@@ -145,10 +155,15 @@
 .order-list {
     position: absolute;
     top: 120px;
+    margin: 8px 0;
 }
 
 .order-list .list-group-item {
     box-shadow: var(--down-neum);
+}
+
+.order-list.sprint-list {
+    top: 144px;
 }
 
 .list-group-item > p {
@@ -164,7 +179,7 @@
     width: 100%;
     color: var(--primary);
     text-align: right;
-    margin: 4px 0;
+    margin: 8px 0;
 }
 
 .item-more {
@@ -191,7 +206,22 @@
     background: var(--white);
     box-shadow: var(--down-neum);
     border-radius: 20px;
+}
+
+.card-tag p {
     color: var(--txt-placeholder);
+}
+.card-tag.w-100{
+    height: 180px;
+}
+
+.block-info.flex-col .card-tag {
+    width: 343px;
+    margin: 16px 0;
+}
+
+.block-info.flex-col .card-tag:last-child {
+    margin-bottom: 0;
 }
 
 input.card-tag {
@@ -281,7 +311,7 @@ select.card-tag {
 }
 
 .card-tag > .fz-h3 {
-    color: var(--txt-placeholder);
+    /*color: var(--txt-placeholder);*/
     text-align: center;
 }
 
@@ -413,6 +443,30 @@ select.card-tag {
     text-align: center;
 }
 
+.tag-point.for-date {
+    width: 60px;
+    height:60px;
+    min-width: 60px;
+    min-height: 60px;
+    margin: 8px;
+    align-items: center;
+}
+
+.tag-point.for-date p {
+    line-height: 60px;
+    color: var(--txt-placeholder);
+}
+
+select.tag-point {
+    min-width: 42px;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    background-color: #F0F0F3 !important;
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.7), inset 1px 1px 1px rgba(174, 174, 192, 0.15), -1px -1px 3px #FFFFFF, 1.5px 1.5px 3px rgba(174, 174, 192, 0.4) !important;
+
+}
+
 .overlay-bg {
     position: fixed;
     top: 0;
@@ -440,8 +494,6 @@ select.card-tag {
 .btn-primary.bg-next .txt-neu {
     color: var(--white);
     text-shadow: transparent;
-    /*background: var(--white);*/
-    /*color: var(--white-70);*/
 }
 
 .txt-progress {
@@ -453,7 +505,18 @@ select.card-tag {
     text-align: center;
 }
 
-/* @圖示-icon ---------------------------------------------------------------------------------------------- */
+.txt-date {
+    text-align: center;
+    width: 60px;
+    margin:0 8px 8px 8px;
+    color: var(--txt-placeholder);
+}
+
+/* @顏色-color ---------------------------------------------------------------------------------------------- */
+
+.color_primary {
+    color: var(--primary);
+}
 
 i, img {
     display: block;
@@ -505,6 +568,40 @@ i, img {
     background-image: url("../icon/i_po.svg");
 }
 
+.i-order {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_order.svg");
+}
+
+.i-info {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_info.svg");
+}
+
+.i-list {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_list.svg");
+}
+
+.i-meeting {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_meeting.svg");
+}
+
+
+.i-jira {
+    min-width: 157px;
+    min-height: 47px;
+    background-size: 60%;
+    background-position: left bottom;;
+
+    background-image: url("../icon/i_jira.svg");
+}
+
 /* @圖示-image ---------------------------------------------------------------------------------------------- */
 
 .img-po {
@@ -531,14 +628,20 @@ i, img {
     z-index: 10;
 }
 
-
 .img-bear {
     position: absolute;
     right: -60px;
     bottom: -48px;
     z-index: 10;
-
 }
+
+.img-engineer {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 10;
+}
+
 
 .animate__fadeInRight {
     animation: animate__fadeInRight 2s;
