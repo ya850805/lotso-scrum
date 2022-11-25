@@ -1,6 +1,6 @@
 <!--page7-->
 <template>
-  <section class="flex-col flex-cc w-100 retro-lst">
+  <section class="flex-col flex-cc w-100 retro-list">
     <div class="flex-row">
       <img src="../assets/images/img_master_chat.png" width="158" height="158" class="img-chat"/>
       <ChatTheme>
@@ -13,7 +13,7 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-sc flex-wrap w-100"
+        class="list-group flex-row flex-ss flex-wrap w-100"
         :list="retroItems"
         group="retroItem"
         itemKey="id"
@@ -21,9 +21,8 @@
       <template #item="{ element, index }">
         <div class="flex-row flex-cb list-group-item">
           <span class="tag-point">
-            <img v-if="element.mood === 0" width="32" height="32" src="../assets/icon/i_happy.svg" />
-            <img v-if="element.mood === 1" width="32" height="32"  src="../assets/icon/i_sad.svg"/>
-            <!--            <p class="flex-cc">{{ element.mood }}</p>-->
+            <img v-if="element.mood === 0" width="32" height="32" src="../assets/icon/i_happy.svg"/>
+            <img v-if="element.mood === 1" width="32" height="32" src="../assets/icon/i_sad.svg"/>
           </span>
           <p class="flex-cc">{{ element.description }}</p>
         </div>
@@ -47,7 +46,10 @@
           >
             <template #item="{ element, index }">
               <div class="flex-row flex-cb list-group-item">
-                <span class="tag-point"><p class="flex-cc">{{ element.mood }}</p></span>
+                <span class="tag-point">
+                 <img v-if="element.mood === 0" width="32" height="32" src="../assets/icon/i_happy.svg"/>
+                 <img v-if="element.mood === 1" width="32" height="32" src="../assets/icon/i_sad.svg"/>
+                 </span>
                 <p class="flex-cc">{{ element.description }}</p>
               </div>
             </template>
@@ -69,7 +71,10 @@
           >
             <template #item="{ element, index }">
               <div class="flex-row flex-cb list-group-item">
-                <span class="tag-point"><p class="flex-cc">{{ element.mood }}</p></span>
+                <span class="tag-point">
+                   <img v-if="element.mood === 0" width="32" height="32" src="../assets/icon/i_happy.svg"/>
+                   <img v-if="element.mood === 1" width="32" height="32" src="../assets/icon/i_sad.svg"/>
+                </span>
                 <p class="flex-cc">{{ element.description }}</p>
               </div>
             </template>
