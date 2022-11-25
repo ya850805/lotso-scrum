@@ -27,9 +27,6 @@
     >
       <template #item="{ element, index }">
         <div class="flex-row flex-cb list-group-item">
-          <!--          <span class="tag-point"><p class="flex-cc">{{ element.points }}</p></span>-->
-          <!--          <span class="tag-point"><p class="flex-cc">{{ element.points }}</p></span>-->
-
           <select v-model="element.points" @change="editPoint(1, element.id, $event)" class="tag-point color_primary">
             <option disabled>選項</option>
             <option value="" disabled>?</option>
