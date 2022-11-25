@@ -85,7 +85,7 @@
 <script setup>
 import {TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
 import {onMounted, ref} from "vue";
-import {POINT_IS_EMPTY, SPRINT_IS_EMPTY} from "@/constant/error";
+import {BTN_OK, POINT_IS_EMPTY, SPRINT_IS_EMPTY} from "@/constant/error";
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
@@ -99,8 +99,7 @@ const router = useRouter()
 let isShow = ref(false)
 
 let alertMessage = ref("")
-let alertBtnMessage = ref("OK")
-
+let alertBtnMessage = ref(BTN_OK)
 
 function editPoint(from, id, event) {
   const editPoint = event.target.value === "" ? "" : parseInt(event.target.value)

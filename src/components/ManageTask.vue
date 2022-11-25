@@ -113,7 +113,7 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {INIT_SCRUM_TASK, TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
-import {ORDER_IS_EMPTY, TASK_LINK_IS_INVALID, TASK_NAME_IS_BLANK} from "@/constant/error";
+import {BTN_OK, ORDER_IS_EMPTY, TASK_LINK_IS_INVALID, TASK_NAME_IS_BLANK} from "@/constant/error";
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
@@ -132,7 +132,7 @@ let taskPoint = ref("")
 let isShow = ref(false)
 
 let alertMessage = ref("")
-let alertBtnMessage = ref("OK")
+let alertBtnMessage = ref(BTN_OK)
 
 function addTask() {
   //validation
