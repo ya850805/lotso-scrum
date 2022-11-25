@@ -348,13 +348,12 @@ select.card-tag {
     height: 64px;
     margin-top: 16px;
     border-radius: 20px;
-
     text-align: center;
     color: var(--primary);
     box-shadow: var(--up-neum);
     background: var(--gradient-neu);
     transform: perspective(1px) translateZ(0);
-
+    cursor: pointer;
 }
 
 .btn-primary.bg-next {
@@ -392,7 +391,6 @@ select.card-tag {
     margin: 0;
 }
 
-
 .btn-sec {
     display: flex;
     justify-content: center;
@@ -403,6 +401,7 @@ select.card-tag {
     box-shadow: var(--up-neum);
     background: var(--gradient-neu);
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .btn-sec p {
