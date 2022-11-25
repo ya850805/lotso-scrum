@@ -73,7 +73,7 @@
     <div class="block-info flex-col flex-cc">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h2">待辦清單排序</p>
-        <i class="i-po"></i>
+        <i class="i_order"></i>
       </div>
 
       <p>優先度高</p>

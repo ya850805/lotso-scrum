@@ -191,7 +191,19 @@
     background: var(--white);
     box-shadow: var(--down-neum);
     border-radius: 20px;
+}
+
+.card-tag p {
     color: var(--txt-placeholder);
+}
+
+.block-info.flex-col .card-tag {
+    width: 343px;
+    margin: 16px 0;
+}
+
+.block-info.flex-col .card-tag:last-child {
+    margin-bottom: 0;
 }
 
 input.card-tag {
@@ -281,7 +293,7 @@ select.card-tag {
 }
 
 .card-tag > .fz-h3 {
-    color: var(--txt-placeholder);
+    /*color: var(--txt-placeholder);*/
     text-align: center;
 }
 
@@ -440,8 +452,6 @@ select.card-tag {
 .btn-primary.bg-next .txt-neu {
     color: var(--white);
     text-shadow: transparent;
-    /*background: var(--white);*/
-    /*color: var(--white-70);*/
 }
 
 .txt-progress {
@@ -453,7 +463,11 @@ select.card-tag {
     text-align: center;
 }
 
-/* @圖示-icon ---------------------------------------------------------------------------------------------- */
+/* @顏色-color ---------------------------------------------------------------------------------------------- */
+
+.color_primary {
+    color: var(--primary);
+}
 
 i, img {
     display: block;
@@ -505,6 +519,27 @@ i, img {
     background-image: url("../icon/i_po.svg");
 }
 
+.i-order {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_order.svg");
+}
+
+.i-info {
+    min-width: 100px;
+    min-height: 100px;
+    background-image: url("../icon/i_info.svg");
+}
+
+.i-jira{
+    min-width: 157px;
+    min-height: 47px;
+    background-size: 60%;
+    background-position:  left bottom;;
+
+    background-image: url("../images/img_jira.png");
+}
+
 /* @圖示-image ---------------------------------------------------------------------------------------------- */
 
 .img-po {
@@ -537,7 +572,6 @@ i, img {
     right: -60px;
     bottom: -48px;
     z-index: 10;
-
 }
 
 .animate__fadeInRight {

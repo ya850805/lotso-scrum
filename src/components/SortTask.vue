@@ -1,6 +1,7 @@
 <!--page4-->
 <template>
   <section class="flex-col">
+    <img src="../assets/images/img_po.png" width="360" height="708" class="img-po"/>
     目前我們團隊一次 Sprint 週期是兩週的時間，依照我
     的觀察，目前團隊可以負擔的點數(Sprint Point) 大約是 20 點左右。
     <br>
@@ -80,7 +81,7 @@ let isShow = ref(false)
 
 let alertMessage = ref("")
 let alertBtnMessage = ref("OK")
-ㄉ
+
 
 function editPoint(from, id, event) {
   const editPoint = parseInt(event.target.value)
