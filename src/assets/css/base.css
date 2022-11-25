@@ -13,6 +13,27 @@ a {
     text-decoration: none;
 }
 
+input, button, select,
+input:focus, button:focus, select:focus {
+    border-color: transparent;
+    border-width: 0px;
+    outline: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+
+}
+
+/*select {*/
+/*    appearance: none;*/
+/*    -moz-appearance: none;*/
+/*    -webkit-appearance: none;*/
+/*}*/
+
+/*body::-webkit-scrollbar-thumb:hover {*/
+/*    background: $sub_primary;*/
+/*}*/
+
 /* ---自定義變數--- */
 :root {
     /* color-variables */
@@ -42,6 +63,7 @@ a {
     --inner-glass: inset 3px 3px 4px rgba(114, 114, 114, 0.4);
     --outside-glass: 0px 10px 20px rgba(0, 0, 0, 0.2);
     --outside-hover: 0px 10px 20px var(--white-70);
+    /*--outside-focus: 0px 10px 20px var(--primary);*/
 
     --up-neum: 5px 5px 10px rgba(117, 127, 138, 0.5);
     --down-neum: inset -5px -5px 10px -2px rgba(255, 255, 255, 0.5), inset 5px 5px 10px -2px rgba(117, 127, 138, 0.5);
@@ -75,7 +97,7 @@ h3, .fz-h3 {
 }
 
 
-p, .font-default {
+p, input, select, .font-default {
     font-size: var(--font-size-base);
     font-weight: var(--fw-bold);
     line-height: 28px;
@@ -101,10 +123,19 @@ p, .font-default {
     align-items: center;
     justify-content: flex-start;
 }
+.flex-ss {
+    align-content: flex-start;
+    justify-content: flex-start;
+}
 
 .flex-cc {
     align-items: center;
     justify-content: center;
+}
+
+.flex-ca {
+    align-items: center;
+    justify-content: space-around;
 }
 
 .flex-cb {
@@ -117,6 +148,14 @@ p, .font-default {
     justify-content: space-between;
 }
 
+.flex-eb {
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.w-100 {
+    width: 100%;
+}
 
 
 /*.flex-row-a {*/
