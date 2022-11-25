@@ -73,11 +73,12 @@
     <div class="block-info flex-col flex-cc">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h2">待辦清單排序</p>
-        <i class="i_order"></i>
+        <i class="i-order"></i>
       </div>
-
       <p>優先度高</p>
+
       <div class="order-list">
+
         <div class="list-group-item"></div>
         <div class="list-group-item"></div>
         <div class="list-group-item"></div>
@@ -96,15 +97,7 @@
           </div>
         </template>
       </draggable>
-
       <p>優先度低</p>
-
-      <!--      <RouterLink to="/scrum-intro" @click="submit">-->
-      <!--        <div class="btn-primary bg-next animate__pulse">-->
-      <!--          <p class="txt-neu fz-h2">Submit</p>-->
-      <!--        </div>-->
-      <!--      </RouterLink>-->
-
       <button @click="submit" class="btn-primary bg-next animate__pulse">
         <p class="txt-neu fz-h2">Submit</p>
       </button>
