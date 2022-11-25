@@ -123,6 +123,10 @@ p, input, select, .font-default {
     align-items: center;
     justify-content: flex-start;
 }
+.flex-ss {
+    align-content: flex-start;
+    justify-content: flex-start;
+}
 
 .flex-cc {
     align-items: center;

@@ -94,18 +94,20 @@
 }
 
 .list-group {
-    width: 70%;
+    width: calc(100% - 432px);
+    height: 100%;
 }
 
 .list-area {
     position: relative;
+    left: 2px;
     width: 360px;
-    height: 350px;
+    height: 360px;
     max-width: 360px;
-    max-height: 350px;
+    max-height: 360px;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-bottom: 16px;
+    padding-bottom: 10px;
 }
 
 /* -- 元件 Type: 捲軸 -- */
@@ -138,7 +140,15 @@
     background: var(--white);
     box-shadow: var(--up-neum);
     border-radius: 20px;
-    /*color: var(--txt-placeholder);*/
+}
+
+.order-list {
+    position: absolute;
+    top: 120px;
+}
+
+.order-list .list-group-item {
+    box-shadow: var(--down-neum);
 }
 
 .list-group-item > p {
@@ -158,6 +168,7 @@
 }
 
 .item-more {
+    display: contents;
     position: absolute;
     right: -72px;
     padding: 16px;
@@ -532,10 +543,12 @@ i, img {
 .animate__fadeInRight {
     animation: animate__fadeInRight 2s;
 }
-.slideInLeft{
+
+.slideInLeft {
     animation: slideInLeft 2s;
 }
-.animate__slideOutLeft{
+
+.animate__slideOutLeft {
     animation: animate__slideOutLeft 2s;
 
 }

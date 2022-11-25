@@ -21,7 +21,7 @@
         <input type="text" v-model="taskLink" placeholder="選填" class="card-tag">
       </div>
       <div class="flex_col">
-        <p>分數</p>
+        <p>點數</p>
 
         <!--//TODO select-->
         <!--        <div class="select_group">-->
@@ -46,7 +46,7 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-wrap"
+        class="list-group flex-row flex-ss flex-wrap"
         :list="taskArray1"
         group="tasks"
         itemKey="id"
@@ -77,7 +77,12 @@
       </div>
 
       <p>優先度高</p>
-
+      <div class="order-list">
+        <div class="list-group-item"></div>
+        <div class="list-group-item"></div>
+        <div class="list-group-item"></div>
+        <div class="list-group-item"></div>
+      </div>
       <draggable class="list-area flex-col flex-cs"
                  :list="taskArray2"
                  group="tasks"
@@ -100,16 +105,15 @@
       <!--        </div>-->
       <!--      </RouterLink>-->
 
-      <button @click="submit">
-        <div class="btn-primary bg-next animate__pulse">
-          <p class="txt-neu fz-h2">Submit</p>
-        </div>
+      <button @click="submit" class="btn-primary bg-next animate__pulse">
+        <p class="txt-neu fz-h2">Submit</p>
       </button>
     </div>
 
-    <XXX v-show="isShow" @closeAlert="isShow = false" :alertMessage="alertMessage" :alert-btn-message="alertBtnMessage">
+    <AlertTheme v-show="isShow" @closeAlert="isShow = false" :alertMessage="alertMessage"
+                :alert-btn-message="alertBtnMessage">
       <template></template>
-    </XXX>
+    </AlertTheme>
   </section>
 </template>
 
@@ -117,8 +121,11 @@
 import {onMounted, ref} from "vue";
 import {INIT_SCRUM_TASK, TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
 import {ORDER_IS_EMPTY, TASK_NAME_IS_BLANK} from "@/constant/error";
-import XXX from './theme/XXX.vue';
+import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
+import {useRouter} from "vue-router/dist/vue-router";
+
+const router = useRouter()
 
 let taskArray1 = ref(INIT_SCRUM_TASK);
 let taskArray2 = ref([])
@@ -145,8 +152,8 @@ function addTask() {
     const task = {
       id: taskArray1.value.length + taskArray2.value.length + 1,
       name: taskName.value,
-      link: taskLink,
-      points: taskPoint,
+      link: taskLink.value,
+      points: taskPoint.value,
       isToggleOpen: false
     }
     taskArray1.value.push(task)
@@ -163,13 +170,15 @@ function deleteTask(id) {
 
 function submit() {
   if (taskArray2.value.length === 0) {
-    //TODO alert
-    isShow.value = true
     alertMessage.value = ORDER_IS_EMPTY
+    isShow.value = true
   } else {
-    // TODO check taskArray2 is not empty
     localStorage.removeItem(TASKS_KEY)
     localStorage.setItem(TASKS_KEY, JSON.stringify(taskArray2.value))
+    router.push({
+      name: 'scrum-intro'
+    })
+
   }
 }
 

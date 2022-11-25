@@ -1,65 +1,86 @@
 <!--page4-->
 <template>
-  目前我們團隊一次 Sprint 週期是兩週的時間，依照我
-  的觀察，目前團隊可以負擔的點數(Sprint Point) 大約是 20 點左右。
-  <br>
-  你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！
-  點數共有1 、2 、3 、5 、8 、13 、21，Point越大，代表花費時間越多~
+  <section class="flex-col">
+    目前我們團隊一次 Sprint 週期是兩週的時間，依照我
+    的觀察，目前團隊可以負擔的點數(Sprint Point) 大約是 20 點左右。
+    <br>
+    你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！
+    點數共有1 、2 、3 、5 、8 、13 、21，Point越大，代表花費時間越多~
 
-  <hr>
-  你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！
-  點數共有1 、2 、3 、5 、8 、13 、21，Point越大，代表花費時間越多~<br><br>
+    <hr>
+    你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！
+    點數共有1 、2 、3 、5 、8 、13 、21，Point越大，代表花費時間越多~<br><br>
 
-  <draggable
-      class="list-group"
-      :list="taskArray"
-      group="tasks"
-      itemKey="id"
-  >
-    <template #item="{ element, index }">
-      <div class="list-group-item">
-        <select :value="element.points" @change="editPoint(1, element.id, $event)">
-          <option>選項</option>
-          <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
-        </select> -- {{ element.name }} -- {{ element.link }}
-      </div>
-    </template>
-  </draggable>
+    <draggable
+        class="list-group"
+        :list="taskArray"
+        group="tasks"
+        itemKey="id"
+    >
+      <template #item="{ element, index }">
+        <div class="list-group-item">
+          <select :value="element.points" @change="editPoint(1, element.id, $event)">
+            <option>選項</option>
+            <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
+          </select> -- {{ element.name }} -- {{ element.link }}
+        </div>
+      </template>
+    </draggable>
 
-  <hr>
+    <hr>
 
-  <h2>開發A組 短衝待辦清單 21點/5人</h2>
-  <draggable
-      class="list-group"
-      :list="finalTaskArray"
-      group="tasks"
-      itemKey="id"
-      @change="checkNullPoint"
-  >
-    <template #item="{ element, index }">
-      <div class="list-group-item flex-row flex-cb">
-        <select :value="element.points" @change="editPoint(2, element.id, $event)">
-          <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
-        </select>
-        <p>{{ element.name }}</p>
-        <a href="{{ element.link }}"><i class="i-link"></i></a>
-      </div>
-    </template>
+    <h2>開發A組 短衝待辦清單 21點/5人</h2>
+    <draggable
+        class="list-group"
+        :list="finalTaskArray"
+        group="tasks"
+        itemKey="id"
+        @change="checkNullPoint"
+    >
+      <template #item="{ element, index }">
+        <div class="list-group-item flex-row flex-cb">
+          <select :value="element.points" @change="editPoint(2, element.id, $event)">
+            <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
+          </select>
+          <p>{{ element.name }}</p>
+          <a href="{{ element.link }}"><i class="i-link"></i></a>
+        </div>
+      </template>
 
-  </draggable>
+    </draggable>
 
 
-  <br>
-  <RouterLink to="/sprint-calendar" @click="submit()">Submit</RouterLink>
+    <br>
+    <button @click="submit" class="btn-primary bg-next animate__pulse">
+      <p class="txt-neu fz-h2">Submit</p>
+    </button>
+<!--    <RouterLink to="/sprint-calendar" @click="submit()">Submit</RouterLink>-->
+
+    <AlertTheme v-show="isShow" @closeAlert="isShow = false" :alertMessage="alertMessage"
+                :alert-btn-message="alertBtnMessage">
+      <template></template>
+    </AlertTheme>
+  </section>
 </template>
 
 <script setup>
 import {TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
 import {onMounted, ref} from "vue";
+import {POINT_IS_EMPTY, SPRINT_IS_EMPTY} from "@/constant/error";
+import AlertTheme from './theme/AlertTheme.vue';
+import {useRouter} from "vue-router/dist/vue-router";
 
 const taskArray = ref(JSON.parse(localStorage.getItem(TASKS_KEY)))
 const finalTaskArray = ref([])
 const taskPointArray = ref(TASK_STORY_POINTS)
+const router = useRouter()
+
+//is alert show
+let isShow = ref(false)
+
+let alertMessage = ref("")
+let alertBtnMessage = ref("OK")
+ㄉ
 
 function editPoint(from, id, event) {
   const editPoint = parseInt(event.target.value)
@@ -73,7 +94,8 @@ function editPoint(from, id, event) {
 function checkNullPoint() {
   const nullPointTasks = finalTaskArray.value.filter(task => task.points == null)
   if (nullPointTasks.length != 0) {
-    alert("you had add null point task!")
+    alertMessage.value = POINT_IS_EMPTY
+    isShow.value = true
     finalTaskArray.value = finalTaskArray.value.filter(task => task.points != null)
     taskArray.value.push(nullPointTasks[0])
   }
@@ -85,6 +107,10 @@ function submit() {
   //TODO check the final task array cannot be empty.
 
   //TODO add finalTaskArray to localStorage
+
+  router.push({
+    name: 'sprint-calendar'
+  })
 
   console.log(finalTaskArray.value)
 }
