@@ -446,10 +446,6 @@ select:focus {
     background: var(--primary);
 }
 
-.content-pop .btn-primary.bg-next {
-    margin-left: 36px;
-}
-
 .btn-primary:hover {
     box-shadow: var(--outside-hover);
 }

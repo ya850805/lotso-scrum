@@ -92,12 +92,6 @@
                 :alert-btn-message="alertBtnMessage">
       <template></template>
     </AlertTheme>
-
-    <ConfirmTheme v-show="isShow" @closeConfirm="isShow = false" :cancel-btn-message="cancelBtnMessage"
-                  :confirm-btn-message="confirmBtnMessage">
-      <template></template>
-    </ConfirmTheme>
-
   </section>
 </template>
 
@@ -106,10 +100,9 @@ import {ref} from "vue";
 import {RETRO_ITEMS} from "@/constant/const";
 import {onMounted} from "vue";
 import AlertTheme from './theme/AlertTheme.vue';
-import ConfirmTheme from './theme/ConfirmTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
-import {BTN_OK, TASK_NAME_IS_BLANK, BTN_CONFIRM, BTN_CANCEL} from "@/constant/error";
+import {BTN_OK, TASK_NAME_IS_BLANK} from "@/constant/error";
 
 const retroItems = ref(RETRO_ITEMS)
 const wellDone = ref([])
@@ -122,13 +115,9 @@ let isShow = ref(false)
 let alertMessage = ref("")
 let alertBtnMessage = ref(BTN_OK)
 
-let confirmMessage = ref("")
-let confirmBtnMessage = ref(BTN_CONFIRM)
-let cancelBtnMessage = ref(BTN_CANCEL)
-
 function submit() {
 
-  confirmMessage.value = TASK_NAME_IS_BLANK
+  alertMessage.value = TASK_NAME_IS_BLANK
   isShow.value = true
   //TODO validate retro item
   // alert("12345");
