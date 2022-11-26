@@ -87,6 +87,7 @@ import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
 
+const emit = defineEmits(['setProgressRate'])
 const taskArray = ref(JSON.parse(localStorage.getItem(TASKS_KEY)))
 const finalTaskArray = ref([])
 const taskPointArray = ref(TASK_STORY_POINTS)
@@ -98,18 +99,22 @@ let isShow = ref(false)
 let alertMessage = ref("")
 let alertBtnMessage = ref(BTN_OK)
 
+onMounted(() => {
+  emit('setProgressRate', 50)
+})
+
 function editPoint(from, id, event) {
   const editPoint = event.target.value === "" ? "" : parseInt(event.target.value)
-  if (from == 1) {
+  if (from === 1) {
     taskArray.value.filter(task => task.id === id)[0].points = editPoint
-  } else if (from == 2) {
+  } else if (from === 2) {
     finalTaskArray.value.filter(task => task.id === id)[0].points = editPoint
   }
 }
 
 function checkNullPoint() {
   const nullPointTasks = finalTaskArray.value.filter(task => task.points === "")
-  if (nullPointTasks.length != 0) {
+  if (nullPointTasks.length !== 0) {
     alertMessage.value = POINT_IS_EMPTY
     isShow.value = true
     finalTaskArray.value = finalTaskArray.value.filter(task => task.points != "")
@@ -118,25 +123,23 @@ function checkNullPoint() {
 }
 
 function submit() {
-  //TODO the point of the tasks that include in finalTaskArray cannot be null
-  //TODO the total points cannot over the limitation
-  //TODO check the final task array cannot be empty.
-
-  //TODO add finalTaskArray to localStorage
-
-  router.push({
-    name: 'sprint-calendar'
-  })
-
-  console.log(finalTaskArray.value)
+  if (finalTaskArray.value.length === 0) {
+    alertMessage.value = POINT_IS_EMPTY
+    isShow.value = true
+  } else if(sumPoints(finalTaskArray) > 21) {
+    alert("xxxx")
+  } else {
+    router.push({
+      name: 'sprint-calendar'
+    })
+  }
 }
 
-const emit = defineEmits(['setProgressRate'])
-
-onMounted(() => {
-  emit('setProgressRate', 50)
-})
-
+function sumPoints(taskArray) {
+  return taskArray.value.map(task => task.points).reduce(function(point1, point2) {
+    return point1 + point2
+  }, 0)
+}
 
 </script>
 

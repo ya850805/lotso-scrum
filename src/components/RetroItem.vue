@@ -107,6 +107,7 @@ import {BTN_OK, TASK_NAME_IS_BLANK} from "@/constant/error";
 const retroItems = ref(RETRO_ITEMS)
 const wellDone = ref([])
 const needImprovement = ref([])
+const router = useRouter()
 const emit = defineEmits(['setProgressRate'])
 
 //is alert show
@@ -116,16 +117,25 @@ let alertMessage = ref("")
 let alertBtnMessage = ref(BTN_OK)
 
 function submit() {
-
-  alertMessage.value = TASK_NAME_IS_BLANK
-  isShow.value = true
   //TODO validate retro item
-  // alert("12345");
-  // router.push({
-  //   name: 'final'
-  // })
+  if (checkWellDone() && checkNeedImprovement()) {
+    router.push({
+      name: 'final'
+    })
+  } else {
+    alertMessage.value = TASK_NAME_IS_BLANK
+    isShow.value = true
+  }
 }
 
+function checkWellDone() {
+  return wellDone.value.length === 1 && wellDone.value[0].id === 4
+}
+
+function checkNeedImprovement() {
+  return needImprovement.value.length === 2 &&
+      needImprovement.value.filter(item => item.id === 2 || item.id === 3).length === 2
+}
 
 onMounted(() => {
   emit('setProgressRate', 90)

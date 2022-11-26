@@ -14,4 +14,3 @@ app.mount('#app')
 app.component('draggable', draggable)
 
 //TODO modify README.md
-//TODO use Jira

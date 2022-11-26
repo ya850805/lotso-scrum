@@ -94,44 +94,52 @@ const meetings = ref(SPRINT_MEETINGS)
 const daily = ref([])
 const review = ref([])
 const retrospective = ref([])
-let fromBlock
 const router = useRouter()
+let fromBlock
 
 function startDrag(from) {
   fromBlock = from
 }
 
 function moveMeeting(to) {
-  console.log(daily.value.length)
-  if (to == 1 && daily.value.length == 2) {
+  if (to === 1 && daily.value.length === 2) {
     addToFrom(daily.value[0])
     daily.value.splice(0, 1)
-  } else if (to == 2 && review.value.length == 2) {
+  } else if (to === 2 && review.value.length === 2) {
     addToFrom(review.value[0])
     review.value.splice(0, 1)
-  } else if (to == 3 && retrospective.value.length == 2) {
+  } else if (to === 3 && retrospective.value.length === 2) {
     addToFrom(retrospective.value[0])
     retrospective.value.splice(0, 1)
   }
 }
 
 function addToFrom(element) {
-  if (fromBlock == 0) {
+  if (fromBlock === 0) {
     meetings.value.push(element)
-  } else if (fromBlock == 1) {
+  } else if (fromBlock === 1) {
     daily.value.push(element)
-  } else if (fromBlock == 2) {
+  } else if (fromBlock === 2) {
     review.value.push(element)
-  } else if (fromBlock == 3) {
+  } else if (fromBlock === 3) {
     retrospective.value.push(element)
   }
 }
 
 function submit() {
-  //TODO validate every meeting's position is correct or not
-  router.push({
-    name: 'retro-item'
-  })
+  if (meetings.value.length > 0) {
+    alert("123")
+  } else if(daily.value[0].id !== 1 || review.value[0].id !== 2 || retrospective.value[0].id !== 3){
+    alert("456")
+  }
+  else {
+    // alert("forward")
+    router.push({
+      name: 'retro-item'
+    })
+  }
+
+
 }
 
 const emit = defineEmits(['setProgressRate'])
