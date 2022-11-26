@@ -103,14 +103,14 @@ function startDrag(from) {
 
 function moveMeeting(to) {
   if (to === 1 && daily.value.length === 2) {
-    addToFrom(daily.value[0])
-    daily.value.splice(0, 1)
+    addToFrom(daily.value[1])
+    daily.value.splice(1, 1)
   } else if (to === 2 && review.value.length === 2) {
-    addToFrom(review.value[0])
-    review.value.splice(0, 1)
+    addToFrom(review.value[1])
+    review.value.splice(1, 1)
   } else if (to === 3 && retrospective.value.length === 2) {
-    addToFrom(retrospective.value[0])
-    retrospective.value.splice(0, 1)
+    addToFrom(retrospective.value[1])
+    retrospective.value.splice(1, 1)
   }
 }
 
