@@ -207,6 +207,12 @@
 .list-group-item > p {
     text-align: center;
     margin: 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    box-sizing: border-box;
 }
 
 /* @list drag - drag item - for sprint process--------------------------------------------------------------------------------------------- */
@@ -368,7 +374,7 @@ select.tag-point {
     width: 100%;
     height: 19px;
     line-height: 19px;
-    background-color: rgba(40, 197, 255, 0.6);
+    background-color: rgba(40, 197, 255);
     color: var(--white);
     text-align: center;
     font-size: 14px;
