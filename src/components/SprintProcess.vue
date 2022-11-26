@@ -1,7 +1,9 @@
 <!--page6-->
 <template>
-  <section class="flex-col">
-    <div class="flex-row">
+  <section class="flex-col flex-cb w-100">
+
+
+    <div class="flex-row w-100">
       <img src="../assets/images/img_engineer_chat.png" width="158" height="158" class="img-chat"/>
       <ChatTheme>
         <template #text>
@@ -12,7 +14,7 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-ss flex-wrap"
+        class="list-group flex-col flex-ec"
         :list="meetings"
         group="meeting"
         itemKey="id"
@@ -20,68 +22,64 @@
     >
       <template #item="{ element, index }">
         <div class="flex-row flex-cb list-group-item">
-          <p class="flex-cc"> {{ element.name }}</p>
+          <p class="flex-cc">{{ element.name }}</p>
         </div>
       </template>
     </draggable>
 
-    <hr>
-    <h2>Daily Scrum</h2>
-    <draggable
-        class="list-group"
-        :list="daily"
-        group="meeting"
-        itemKey="id"
-        @start="startDrag(1)"
-        @change="moveMeeting(1)"
-    >
-      <template #item="{ element, index }">
-          <div class="order-list">
-            <div class="list-group-item">  {{ element.name }}</div>
+    <div class="sprint-content">
+      <draggable
+          class="list-group-1 list-group-item"
+          :list="daily"
+          group="meeting"
+          itemKey="id"
+          @start="startDrag(1)"
+          @change="moveMeeting(1)"
+      >
+        <template #item="{ element, index }">
+          <div class="flex-row flex-cb list-group-item">
+            <p class="flex-cc">{{ element.name }}</p>
           </div>
-      </template>
-    </draggable>
+        </template>
+      </draggable>
 
-    <hr>
-    <h2>Sprint Review</h2>
-    <draggable
-        class="list-group"
-        :list="review"
-        group="meeting"
-        itemKey="id"
-        @start="startDrag(2)"
-        @change="moveMeeting(2)"
-    >
-      <template #item="{ element, index }">
-        <div class="list-group-item">
-          {{ element.name }}
-        </div>
-      </template>
-    </draggable>
+      <draggable
+          class="list-group-2 list-group-item"
+          :list="review"
+          group="meeting"
+          itemKey="id"
+          @start="startDrag(2)"
+          @change="moveMeeting(2)"
+      >
+        <template #item="{ element, index }">
+          <div class="flex-row flex-cb list-group-item">
+            <p class="flex-cc">{{ element.name }}</p>
+          </div>
+        </template>
+      </draggable>
 
-    <hr>
-    <h2>Sprint Retrospective</h2>
-    <draggable
-        class="list-group"
-        :list="retrospective"
-        group="meeting"
-        itemKey="id"
-        @start="startDrag(3)"
-        @change="moveMeeting(3)"
-    >
-      <template #item="{ element, index }">
-        <div class="list-group-item">
-          {{ element.name }}
-        </div>
-      </template>
-    </draggable>
+      <draggable
+          class="list-group-3 list-group-item"
+          :list="retrospective"
+          group="meeting"
+          itemKey="id"
+          @start="startDrag(3)"
+          @change="moveMeeting(3)"
+      >
+        <template #item="{ element, index }">
+          <div class="flex-row flex-cb list-group-item">
+            <p class="flex-cc">{{ element.name }}</p>
+          </div>
+        </template>
+      </draggable>
+    </div>
+
 
     <div class="flex-row flex-cc w-100">
       <button @click="submit" class="btn-primary bg-next animate__pulse">
         <p class="txt-neu fz-h2">Submit</p>
       </button>
     </div>
-
 
 
   </section>
