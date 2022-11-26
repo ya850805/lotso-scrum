@@ -155,13 +155,14 @@
 }
 
 .retro-list .list-area {
-    top: 4px;
-    left: 0;
-    width: 350px;
-    height: 210px;
-    max-width: 350px;
+    top: 0;
+    left: -10px;
+    width: 360px;
+    height: 200px;
+    max-width: 360px;
     max-height: 210px;
-    overflow-y: hidden;
+    overflow-y: auto;
+    margin: 4px 12px;
 }
 
 /* ---捲軸底色--- */
@@ -263,6 +264,7 @@
 
 .retro-list .order-list {
     top: 40px;
+    left: 2px;
     margin: 0;
 }
 
