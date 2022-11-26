@@ -33,7 +33,6 @@
           itemKey="id"
           @start="startDrag(1)"
           @change="moveMeeting(1)"
-          @end="end"
       >
         <template #item="{ element, index }">
           <div class="flex-row flex-cb list-group-item">
