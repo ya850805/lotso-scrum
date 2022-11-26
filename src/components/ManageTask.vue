@@ -1,6 +1,7 @@
 <!--page2-->
 <template>
   <section class="flex-col">
+    <img src="../assets/icon/i_jira.svg" width="145" height="57" class="i-confluence"/>
     <div class="flex-row">
       <img src="../assets/images/img_po_chat.png" width="158" height="158" class="img-chat"/>
       <ChatTheme>

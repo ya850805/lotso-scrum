@@ -412,6 +412,10 @@ select.card-tag {
     background: var(--primary);
 }
 
+.content-pop .btn-primary.bg-next {
+    margin-left: 36px;
+}
+
 .btn-primary:hover {
     box-shadow: var(--outside-hover);
 }
@@ -675,14 +679,18 @@ i, img {
     background-image: url("../icon/i_retro.svg");
 }
 
-
 .i-jira {
     min-width: 157px;
     min-height: 47px;
     background-size: 60%;
     background-position: left bottom;;
-
     background-image: url("../icon/i_jira.svg");
+}
+
+.i-confluence{
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 /* @圖示-image ---------------------------------------------------------------------------------------------- */

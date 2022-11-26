@@ -7,3 +7,4 @@ export const POINT_IS_EMPTY = "請在「？」給予對應點數(Sprint Point)�
 
 export const BTN_OK = "OK"
 export const BTN_CONFIRM = "Confirm"
+export const BTN_CANCEL = "Cancel"

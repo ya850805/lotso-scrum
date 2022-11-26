@@ -1,6 +1,7 @@
 <!--page7-->
 <template>
   <section class="flex-col flex-cc w-100 retro-list">
+    <img src="../assets/icon/i_confluence.svg" width="205" height="57" class="i-confluence"/>
     <div class="flex-row">
       <img src="../assets/images/img_master_chat.png" width="158" height="158" class="img-chat"/>
       <ChatTheme>
@@ -79,11 +80,9 @@
               </div>
             </template>
           </draggable>
-
         </div>
-
-
       </div>
+
       <button @click="submit" class="btn-primary bg-next animate__pulse">
         <p class="txt-neu fz-h2">Submit</p>
       </button>
@@ -94,8 +93,8 @@
       <template></template>
     </AlertTheme>
 
-    <ConfirmTheme v-show="isShow" @closeAlert="isShow = false" :confirmMessage="confirmMessage"
-                :confirm-btn-message="confirmBtnMessage">
+    <ConfirmTheme v-show="isShow" @closeConfirm="isShow = false" :cancel-btn-message="cancelBtnMessage"
+                  :confirm-btn-message="confirmBtnMessage">
       <template></template>
     </ConfirmTheme>
 
@@ -110,7 +109,7 @@ import AlertTheme from './theme/AlertTheme.vue';
 import ConfirmTheme from './theme/ConfirmTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
-import {BTN_OK, TASK_NAME_IS_BLANK,BTN_CONFIRM} from "@/constant/error";
+import {BTN_OK, TASK_NAME_IS_BLANK, BTN_CONFIRM, BTN_CANCEL} from "@/constant/error";
 
 const retroItems = ref(RETRO_ITEMS)
 const wellDone = ref([])
@@ -125,8 +124,10 @@ let alertBtnMessage = ref(BTN_OK)
 
 let confirmMessage = ref("")
 let confirmBtnMessage = ref(BTN_CONFIRM)
+let cancelBtnMessage = ref(BTN_CANCEL)
 
 function submit() {
+
   confirmMessage.value = TASK_NAME_IS_BLANK
   isShow.value = true
   //TODO validate retro item
@@ -135,7 +136,6 @@ function submit() {
   //   name: 'final'
   // })
 }
-
 
 
 onMounted(() => {
