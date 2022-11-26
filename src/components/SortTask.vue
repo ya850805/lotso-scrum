@@ -3,7 +3,7 @@
   <section class="flex-col">
     <div class="flex-row">
       <img src="../assets/images/img_master_chat.png" width="158" height="158" class="img-chat"/>
-      <ChatTheme>
+      <ChatTheme class="animate__bounceIn">
         <template #text>
           目前我們團隊一次 Sprint 週期是兩週的時間，依照我<br>
           的觀察，目前團隊可以負擔的點數(Sprint Point) 大約是 21 點左右。
@@ -11,7 +11,7 @@
       </ChatTheme>
     </div>
 
-    <div class="flex-col block-glass">
+    <div class="flex-col block-glass animate__fadeInLeft animate__2s">
       <p> 你來練習把任務排到短衝待辦清單吧！請在「？」給予對應點數(Sprint Point)吧！<br>
         點數共有1 、2 、3 、5 、8 、13 、21，Point越大代表花費時間越多~<br></p>
       <div class="flex-row font-default">點選
@@ -20,7 +20,7 @@
       </div>
     </div>
     <draggable
-        class="list-group flex-row flex-ss flex-wrap"
+        class="list-group flex-row flex-ss flex-wrap  animate__fadeInLeft animate__2s"
         :list="taskArray"
         group="tasks"
         itemKey="id"
@@ -38,7 +38,7 @@
       </template>
     </draggable>
 
-    <div class="block-info flex-col flex-cc">
+    <div class="block-info flex-col flex-cc animate__fadeInRight animate__2s">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h3">開發A組<br>短衝待辦清單</p>
         <i class="i-list"></i>

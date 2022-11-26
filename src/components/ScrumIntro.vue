@@ -2,7 +2,7 @@
 <template>
   <section class="flex-col">
     <img src="../assets/images/img_master.png" width="360" height="708" class="img-po"/>
-    <ChatTheme>
+    <ChatTheme class="animate__bounceIn">
       <template #text>
         嗨!我是Scrum Master 子畢，<br>
         主要是促成開發團隊協作、引導團隊進行<br>
@@ -23,7 +23,7 @@
       </template>
     </ChatTheme>
 
-    <div class="block-info flex-col flex-cc">
+    <div class="block-info flex-col flex-cc animate__fadeInRight animate__2s">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h3 color_primary">短衝規劃會議<br>
           (Sprint Planning)</p>

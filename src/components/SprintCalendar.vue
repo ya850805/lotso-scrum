@@ -30,48 +30,64 @@
             <div class="flex-row">
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">1</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">2</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">3</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">4</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">5</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">6</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">7</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
             </div>
 
             <div class="flex-row">
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">8</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">9</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">10</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">11</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">12</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">13</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
               </div>
               <div class="tag-point for-date">
                 <p class="flex-cc fz-h3">14</p>
+                <div class="daily-tag-1 animate__fadeIn animate__2s">Daily</div>
+                <div class="daily-tag-2 animate__fadeIn animate__3s">Review</div>
+                <div class="daily-tag-3 animate__fadeIn animate__4s">Retro</div>
               </div>
             </div>
           </div>
@@ -94,7 +110,7 @@
 
       <div class="flex-row flex-ca w-100">
 
-        <div class="flex-col w-100">
+        <div class="flex-col w-100 animate__fadeIn animate__2s">
           <p class="color_primary">每日站立會議<br>
             (Daily Scrum)</p>
           <div class="card-tag w-100">
@@ -106,9 +122,9 @@
           </div>
         </div>
 
-        <i class="i-arrow"></i>
+        <i class="i-arrow animate__fadeIn animate__2s"></i>
 
-        <div class="flex-col w-100">
+        <div class="flex-col w-100 animate__fadeIn animate__3s">
           <p class="color_primary">短衝檢視會議<br>
             (Sprint Review)</p>
           <div class="card-tag w-100">
@@ -116,9 +132,9 @@
           </div>
         </div>
 
-        <i class="i-arrow"></i>
+        <i class="i-arrow animate__fadeIn animate__3s"></i>
 
-        <div class="flex-col w-100">
+        <div class="flex-col w-100 animate__fadeIn animate__4s">
           <p class="color_primary">短衝自省會議<br>
             (Sprint Retrospective)</p>
           <div class="card-tag w-100">

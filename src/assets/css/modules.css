@@ -11,15 +11,13 @@
     box-shadow: var(--outside-glass);
 }
 
-.content-card .block-glass, .final-page block-glass,
+.content-card .block-glass, .final-page .block-glass,
 .content-pop .block-glass {
     width: 100%;
     height: 55%;
     padding: 48px 48px 24px 240px;
-    border-radius: 0;
     margin: 0;
-    border-top-left-radius: 60px;
-    border-top-right-radius: 60px;
+    border-radius: 60px 60px 0 0;
 }
 
 .final-page .block-glass {
@@ -66,13 +64,13 @@
     box-shadow: var(--outside-glass);
     border: 1px solid var(--white);
     border-radius: 20px;
-    margin: 36px 36px 0px 420px;
+    margin: 36px 36px 0 420px;
 }
 
 .block-chat:before {
     position: absolute;
     content: "";
-    border-width: 25px 25px 10px 0px;
+    border-width: 25px 25px 10px 0;
     border-style: solid;
     border-color: transparent var(--white-70);
     bottom: 20px;
@@ -91,9 +89,11 @@
     box-shadow: var(--outside-glass);
 }
 
-.block-info.for-date {
+.block-info > p {
     width: 100%;
-    padding: 24px 36px;
+    color: var(--primary);
+    text-align: right;
+    margin: 8px 0;
 }
 
 .block-info > .flex-cb > i {
@@ -102,19 +102,46 @@
     right: 0;
 }
 
+.block-info.for-date {
+    width: 100%;
+    padding: 24px 36px;
+}
+
 .retro-list .block-info {
     position: relative;
 }
 
-.list-group {
-    width: calc(100% - 432px);
+/* @content ---------------------------------------------------------------------------------------------- */
+.sprint-content {
+    display: block;
+    position: fixed;
+    margin-bottom: 160px;
+    bottom: 0;
+    width: calc(100% - 96px);
+    height: 560px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image: url('../images/img_sprint_bg.png');
+    pointer-events: none;
+}
+
+/* @list drag -list-group ---------------------------------------------------------------------------------------------- */
+.flex-ec.list-group {
+    width: 100% !important;
+    margin-bottom: 120px;
+}
+
+.flex-ss.list-group {
+    width: calc(100% - 432px) !important;
     height: 100%;
 }
 
-.list-group {
+.retro-list .list-group {
     width: 1100px !important;
 }
 
+/* @list drag -list-area scrollbar---------------------------------------------------------------------------------------------- */
 .list-area {
     position: relative;
     left: 2px;
@@ -137,7 +164,6 @@
     overflow-y: hidden;
 }
 
-/* -- 元件 Type: 捲軸 -- */
 /* ---捲軸底色--- */
 .list-area::-webkit-scrollbar-track {
     background-color: transparent;
@@ -158,6 +184,7 @@
     border-radius: 10px;
 }
 
+/* @list drag - drag item---------------------------------------------------------------------------------------------- */
 .list-group-item {
     position: relative;
     width: 330px;
@@ -169,7 +196,57 @@
     border-radius: 20px;
 }
 
+.block-info .list-group-item {
+    margin: 16px 8px 0 0;
+}
 
+.retro-list .list-group-item {
+    margin: 24px 24px 0 0;
+}
+
+.list-group-item > p {
+    text-align: center;
+    margin: 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    box-sizing: border-box;
+}
+
+/* @list drag - drag item - for sprint process--------------------------------------------------------------------------------------------- */
+.list-group-1 {
+    position: fixed !important;
+    bottom: 490px;
+    left: 550px;
+    box-shadow: var(--down-neum);
+}
+
+.list-group-2 {
+    position: fixed !important;
+    bottom: 170px;
+    left: 500px;
+    box-shadow: var(--down-neum);
+}
+
+.list-group-3 {
+    position: fixed !important;
+    bottom: 170px;
+    left: 900px;
+    box-shadow: var(--down-neum);
+}
+
+.list-group-1 .list-group-item,
+.list-group-2 .list-group-item,
+.list-group-3 .list-group-item {
+    margin: 0;
+    left: -16px;
+    top: -16px;
+    pointer-events: fill;
+}
+
+/* @list drag - order-list --------------------------------------------------------------------------------------------- */
 .order-list {
     position: absolute;
     top: 120px;
@@ -189,26 +266,7 @@
     margin: 0;
 }
 
-.list-group-item > p {
-    text-align: center;
-    margin: 0 8px;
-}
-
-.block-info .list-group-item {
-    margin: 16px 8px 0 0;
-}
-
-.retro-list .list-group-item {
-    margin: 24px 24px 0 0;
-}
-
-.block-info > p {
-    width: 100%;
-    color: var(--primary);
-    text-align: right;
-    margin: 8px 0;
-}
-
+/* @list drag - 收合item --------------------------------------------------------------------------------------------- */
 .item-more {
     display: contents;
     position: absolute;
@@ -217,12 +275,11 @@
     height: 72px;
     background: var(--white);
     box-shadow: var(--down-neum);
-    border-radius: 20px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 0 20px 20px 0;
     z-index: 10;
 }
 
+/* @卡片 - card --------------------------------------------------------------------------------------------- */
 .card-tag {
     width: 260px;
     height: auto;
@@ -252,6 +309,91 @@
     margin-bottom: 0;
 }
 
+/* @label - point區塊 --------------------------------------------------------------------------------------------- */
+.tag-point {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border: 2px solid var(--white);
+    border-radius: 4px;
+    padding-bottom: 4px;
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.7), inset 1px 1px 1px rgba(174, 174, 192, 0.15), -1px -1px 3px #FFFFFF, 1px 1px 3px rgba(174, 174, 192, 0.4);
+    background-color: #F0F0F3;
+}
+
+.tag-point p {
+    color: var(--primary);
+    text-align: center;
+}
+
+/* @label - point區塊 for select--------------------------------------------------------------------------------------------- */
+select.tag-point {
+    min-width: 43px;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    background-color: #F0F0F3 !important;
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.7), inset 1px 1px 1px rgba(174, 174, 192, 0.15), -1px -1px 3px #FFFFFF, 1px 1px 3px rgba(174, 174, 192, 0.4) !important;
+
+}
+
+/* @label - date區塊 for calendar--------------------------------------------------------------------------------------------- */
+.tag-point.for-date {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    margin: 8px;
+    align-items: center;
+}
+
+.tag-point.for-date p {
+    line-height: 60px;
+    color: var(--txt-placeholder);
+}
+
+/* @label - 區塊 for calender--------------------------------------------------------------------------------------------- */
+.daily-tag-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-70);
+    border-radius: 2px;
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+}
+
+.daily-tag-2 {
+    position: absolute;
+    top: 18px;;
+    left: 0;
+    width: 100%;
+    height: 19px;
+    line-height: 19px;
+    background-color: rgba(40, 197, 255);
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+}
+
+.daily-tag-3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 19px;
+    line-height: 19px;;
+    background-color: #FF36A3;
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+}
+
+/* @元件 - input select --------------------------------------------------------------------------------------------- */
 input.card-tag {
     width: 240px;
     height: 47px;
@@ -262,6 +404,19 @@ input::placeholder {
     font-weight: normal;
 }
 
+select.card-tag {
+    width: 100px;
+    height: 47px;
+    font-weight: normal;
+    padding: 0 16px;
+    margin-right: 24px;
+    color: var(--txt-placeholder);
+}
+
+.card-tag > .fz-h3 {
+    text-align: center;
+}
+
 input:focus,
 select:focus {
     background: var(--white);
@@ -270,81 +425,7 @@ select:focus {
     box-shadow: var(--up-neum);
 }
 
-/*//TODO select*/
-/*select:before {*/
-/*    content: '';*/
-/*    background-size: 24px 24px;*/
-/*    background-position: calc(100% - 24px) center;*/
-
-/*    background: #fff url("../icon/i_down.svg") no-repeat;*/
-/*    background-position: right 20px center;*/
-/*}*/
-
-/*.select_style {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    width: 100%;*/
-/*    height: 40px;*/
-/*    background: #fff url("../images/icon/i_select.svg") no-repeat;*/
-/*    background-position: right 20px center;*/
-/*    padding: 10px 24px 10px 20px;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.select_style + .select_dropdown {*/
-/*    display: none;*/
-/*    width: 100%;*/
-/*    max-height: 350px;*/
-/*    margin-top: 4px;*/
-/*    position: absolute;*/
-/*    padding: 4px;*/
-/*    background-color: #fff;*/
-/*    border: 1px solid rgba(0, 0, 0, 0.15);*/
-/*    overflow-y: auto;*/
-/*    z-index: 1;*/
-/*}*/
-
-/*.select_style.active + .select_dropdown,*/
-/*.select_style.active ~ .select_overlay {*/
-/*    display: block;*/
-/*}*/
-
-/*.select_option {*/
-/*    width: 100%;*/
-/*    border-radius: 4px;*/
-/*    padding: 0.5rem 0.5rem 0.5rem 1rem;*/
-/*}*/
-
-/*.select_option:hover {*/
-/*    background-color: var(--primary);*/
-/*    color: #fff;*/
-/*}*/
-
-/*.select_overlay {*/
-/*    display: none;*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    bottom: 0;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    opacity: 0;*/
-/*}*/
-
-select.card-tag {
-    width: 100px;
-    height: 47px;
-    font-weight: normal;
-    padding: 0 16px;
-    margin-right: 24px;
-}
-
-.card-tag > .fz-h3 {
-    /*color: var(--txt-placeholder);*/
-    text-align: center;
-}
-
-
-/* @元件-按鈕 ---------------------------------------------------------------------------------------------- */
+/* @元件-按鈕 primary---------------------------------------------------------------------------------------------- */
 .btn-primary {
     display: flex;
     justify-content: center;
@@ -396,6 +477,7 @@ select.card-tag {
     margin: 0;
 }
 
+/* @元件-按鈕 secondary---------------------------------------------------------------------------------------------- */
 .btn-sec {
     display: flex;
     justify-content: center;
@@ -413,11 +495,7 @@ select.card-tag {
     color: var(--primary);
 }
 
-/* @元件-draggable ------------------------------------------------------------------------------------------- */
-
-
-/* @元件-progress bar ---------------------------------------------------------------------------------------------- */
-
+/* @元件-進度列 progress bar ---------------------------------------------------------------------------------------------- */
 .outside-progress {
     display: flex;
     justify-content: center;
@@ -428,20 +506,7 @@ select.card-tag {
     border-radius: 100%;
     background: #F6E7D8;
     z-index: 10;
-    /*animation: barin 1s ease;*/
-    /*opacity: 0.6;*/
 }
-
-@keyframes barIn {
-    0% {
-        box-shadow: inset 0px 40px 10px rgba(246, 231, 216, 0.9);
-    }
-
-    100% {
-        box-shadow: inset 0px 100px 10px rgba(246, 231, 216, 0.9);
-    }
-}
-
 
 .inner-progress {
     width: 100px;
@@ -450,48 +515,6 @@ select.card-tag {
     box-shadow: var(--down-neum);
     background-color: var(--white);
     z-index: 10;
-}
-
-/* @tag-point ---------------------------------------------------------------------------------------------- */
-.tag-point {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    min-height: 36px;
-    border: 2px solid var(--white);
-    border-radius: 4px;
-    padding-bottom: 4px;
-    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.7), inset 1px 1px 1px rgba(174, 174, 192, 0.15), -1px -1px 3px #FFFFFF, 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
-    background-color: #F0F0F3;
-}
-
-.tag-point p {
-    color: var(--primary);
-    text-align: center;
-}
-
-.tag-point.for-date {
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
-    min-height: 60px;
-    margin: 8px;
-    align-items: center;
-}
-
-.tag-point.for-date p {
-    line-height: 60px;
-    color: var(--txt-placeholder);
-}
-
-select.tag-point {
-    min-width: 42px;
-    margin-top: 0 !important;
-    padding: 0 !important;
-    text-align: center;
-    background-color: #F0F0F3 !important;
-    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.7), inset 1px 1px 1px rgba(174, 174, 192, 0.15), -1px -1px 3px #FFFFFF, 1.5px 1.5px 3px rgba(174, 174, 192, 0.4) !important;
-
 }
 
 .overlay-bg {
@@ -510,12 +533,11 @@ select.tag-point {
 }
 
 /* @文字-txt ---------------------------------------------------------------------------------------------- */
-
 .txt-neu {
     background: var(--primary);
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
+    text-shadow: rgba(255, 255, 255, 0.2) 0 3px 3px;
 }
 
 .btn-primary.bg-next .txt-neu {
@@ -527,7 +549,7 @@ select.tag-point {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: rgba(255, 255, 255, 0.2) 0px 3px 3px;
+    text-shadow: rgba(255, 255, 255, 0.2) 0 3px 3px;
     line-height: 100px;
     text-align: center;
 }
@@ -540,11 +562,11 @@ select.tag-point {
 }
 
 /* @顏色-color ---------------------------------------------------------------------------------------------- */
-
 .color_primary {
     color: var(--primary);
 }
 
+/* @圖示-icon ---------------------------------------------------------------------------------------------- */
 i, img {
     display: block;
     background-repeat: no-repeat;
@@ -570,9 +592,7 @@ i, img {
     display: inline-block;
     width: 24px;
     height: 24px;
-    /*background-image: url("../icon/i_more.svg");*/
     cursor: pointer;
-    /*filter: drop-shadow(0px 0 var(--primary));*/
 }
 
 
@@ -628,22 +648,25 @@ i, img {
     background-image: url("../icon/i_retro.svg");
 }
 
-
 .i-jira {
     min-width: 157px;
     min-height: 47px;
     background-size: 60%;
     background-position: left bottom;;
-
     background-image: url("../icon/i_jira.svg");
 }
 
-/* @圖示-image ---------------------------------------------------------------------------------------------- */
+.i-confluence {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
 
+/* @圖示-image ---------------------------------------------------------------------------------------------- */
 .img-po {
     position: absolute;
-    left: 0px;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
     z-index: 10;
 }
 
@@ -678,24 +701,58 @@ i, img {
     z-index: 10;
 }
 
-
-.animate__fadeInRight {
-    animation: animate__fadeInRight 2s;
+/* @動畫 - animate ---------------------------------------------------------------------------------------------- */
+/*情境 - 引導按鈕 start restart*/
+.animate__shakeX {
+    animation: animate__shakeX 2s infinite;
 }
 
-.slideInLeft {
-    animation: slideInLeft 2s;
-}
-
-.animate__slideOutLeft {
-    animation: animate__slideOutLeft 2s;
-
-}
-
+/*情境 - 引導按鈕 next ,焦點標題*/
 .animate__pulse {
     animation: animate__pulsepulse 2s infinite;
 }
 
-.animate__shakeX {
-    animation: animate__shakeX 2s infinite;
+/*情境 - 按鈕收合*/
+.slideInLeft {
+    animation: slideInLeft 2s;
+}
+
+/*情境 - 對話訊息*/
+.animate__bounceIn {
+    animation: animate__bounceIn 0.5s;
+}
+
+/*情境 - 淡入順序顯示*/
+.animate__fadeIn {
+    animation: animate__fadeIn 1s;
+    animation-fill-mode: backwards;
+}
+
+/*情境 - 畫面滑入*/
+.animate__fadeInRight {
+    animation: animate__fadeInRight 2s;
+}
+
+.animate__fadeInLeft {
+    animation: animate__fadeInLeft 2s;
+}
+
+.animate__headShake{
+    animation: animate__headShake 2s;
+}
+
+/* @動畫順序-animate  ---------------------------------------------------------------------------------------------- */
+.animate__2s {
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.animate__3s {
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+.animate__4s {
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
 }
