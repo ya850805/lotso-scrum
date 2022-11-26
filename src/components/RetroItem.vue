@@ -89,6 +89,16 @@
       </button>
     </div>
 
+    <AlertTheme v-show="isShow" @closeAlert="isShow = false" :alertMessage="alertMessage"
+                :alert-btn-message="alertBtnMessage">
+      <template></template>
+    </AlertTheme>
+
+    <ConfirmTheme v-show="isShow" @closeAlert="isShow = false" :confirmMessage="confirmMessage"
+                :confirm-btn-message="confirmBtnMessage">
+      <template></template>
+    </ConfirmTheme>
+
   </section>
 </template>
 
@@ -97,23 +107,36 @@ import {ref} from "vue";
 import {RETRO_ITEMS} from "@/constant/const";
 import {onMounted} from "vue";
 import AlertTheme from './theme/AlertTheme.vue';
+import ConfirmTheme from './theme/ConfirmTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
+import {BTN_OK, TASK_NAME_IS_BLANK,BTN_CONFIRM} from "@/constant/error";
 
 const retroItems = ref(RETRO_ITEMS)
 const wellDone = ref([])
 const needImprovement = ref([])
+const emit = defineEmits(['setProgressRate'])
+
+//is alert show
+let isShow = ref(false)
+
+let alertMessage = ref("")
+let alertBtnMessage = ref(BTN_OK)
+
+let confirmMessage = ref("")
+let confirmBtnMessage = ref(BTN_CONFIRM)
 
 function submit() {
+  confirmMessage.value = TASK_NAME_IS_BLANK
+  isShow.value = true
   //TODO validate retro item
-  alert("12345");
+  // alert("12345");
   // router.push({
   //   name: 'final'
   // })
 }
 
 
-const emit = defineEmits(['setProgressRate'])
 
 onMounted(() => {
   emit('setProgressRate', 90)
