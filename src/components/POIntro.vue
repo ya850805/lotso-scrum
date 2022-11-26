@@ -1,15 +1,15 @@
 <!--page1-->
 <template>
   <section class="flex-col">
-    <img src="../assets/images/img_po.png" width="360" height="708" class="img-po"/>
-    <ChatTheme>
+    <img src="../assets/images/img_po.png" width="360" height="708" class="img-po "/>
+    <ChatTheme class="animate__bounceIn">
       <template #text>
         我是 熊抱科技，開發 A 組的 PO 子蓓。<br>
         PO 也就是產品負責人（Product Owner）!
       </template>
     </ChatTheme>
 
-    <ChatTheme>
+    <ChatTheme class="animate__bounceIn animate__2s">
       <template #text>
         剛好我最近手邊有一個『人才招募系統』的案子，<br>
         我才剛列出了『產品需求清單』。<br>
@@ -25,7 +25,7 @@
       </template>
     </ChatTheme>
 
-    <div class="block-info">
+    <div class="block-info animate__fadeInRight animate__2s">
       <div class="flex-row flex-cb">
         <p class="fz-h2">產品負責人：</p>
         <i class="i-po"></i>

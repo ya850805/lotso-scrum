@@ -49,7 +49,7 @@
         <p class="txt-neu fz-h2">{{ cancelBtnMessage }}</p>
       </button>
       <RouterLink to="/final">
-        <div class="btn-primary bg-next animate__pulse">
+        <div class="btn-primary bg-next">
           <p class="txt-neu fz-h2">{{ confirmBtnMessage }}</p>
         </div>
       </RouterLink>

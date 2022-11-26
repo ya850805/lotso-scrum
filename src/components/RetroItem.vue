@@ -4,7 +4,7 @@
     <img src="../assets/icon/i_confluence.svg" width="205" height="57" class="i-confluence"/>
     <div class="flex-row">
       <img src="../assets/images/img_master_chat.png" width="158" height="158" class="img-chat"/>
-      <ChatTheme>
+      <ChatTheme class="animate__bounceIn">
         <template #text>
           今天是開發B組的Retro，你也看看Retro都做什麼～會請成員提出哪些是<br>
           做得好的地方、哪些可以繼續改善的地方？並記錄再Confluence，<br>
@@ -14,7 +14,7 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-ss flex-wrap w-100"
+        class="list-group flex-row flex-ss flex-wrap w-100 animate__fadeInLeft"
         :list="retroItems"
         group="retroItem"
         itemKey="id"
@@ -30,7 +30,7 @@
       </template>
     </draggable>
 
-    <div class="block-info flex-col flex-cc ">
+    <div class="block-info flex-col flex-cc animate__fadeInRight">
       <i class="i-retro"></i>
       <div class="flex-row">
         <div class="flex_col">

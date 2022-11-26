@@ -2,7 +2,7 @@
 
 <template>
   <section class="content-card final-page flex-col flex-sb">
-    <img src="../assets/images/img_group.png" width="487" height="420" class="img-po"/>
+    <img src="../assets/images/img_group.png" width="487" height="420" class="img-po animate__fadeInLeft "/>
     <img src="../assets/images/img_bear.svg" width="523" height="599" class="img-bear animate__fadeInRight">
 
     <div class="block-glass">

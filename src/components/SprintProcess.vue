@@ -1,11 +1,9 @@
 <!--page6-->
 <template>
   <section class="flex-col flex-cb w-100">
-
-
     <div class="flex-row w-100">
       <img src="../assets/images/img_engineer_chat.png" width="158" height="158" class="img-chat"/>
-      <ChatTheme>
+      <ChatTheme class="animate__bounceIn">
         <template #text>
           Sprint 流程記憶大考驗<br>
           那你來試試把會議拖曳到對應的區域內吧！
@@ -14,7 +12,7 @@
     </div>
 
     <draggable
-        class="list-group flex-col flex-ec"
+        class="list-group flex-col flex-ec animate__fadeInRight"
         :list="meetings"
         group="meeting"
         itemKey="id"
@@ -27,7 +25,7 @@
       </template>
     </draggable>
 
-    <div class="sprint-content">
+    <div class="sprint-content animate__fadeIn">
       <draggable
           class="list-group-1 list-group-item"
           :list="daily"

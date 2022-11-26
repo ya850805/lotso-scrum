@@ -39,6 +39,7 @@ input:focus, button:focus, select:focus {
     /* color-variables */
     /*深粉紅色 */
     --primary: #BB3D63;
+    --primary-70: #BB3D6370;
 
     /*白色*/
     --white: #fff;

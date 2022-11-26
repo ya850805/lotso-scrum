@@ -4,7 +4,7 @@
     <img src="../assets/icon/i_jira.svg" width="145" height="57" class="i-confluence"/>
     <div class="flex-row">
       <img src="../assets/images/img_po_chat.png" width="158" height="158" class="img-chat"/>
-      <ChatTheme>
+      <ChatTheme class="animate__bounceIn">
         <template #text>
           請把需求放到產品待辦清單，並調整待辦的優先度順序。<br>
           我們公司也推薦使用 Jira 來做任務的管理呢！
@@ -12,7 +12,7 @@
       </ChatTheme>
     </div>
 
-    <div class="flex-row block-glass flex-cb">
+    <div class="flex-row block-glass flex-cb animate__fadeInLeft animate__2s">
       <div class="flex_col">
         <p>*待辦清單名稱</p>
         <input type="text" v-model="taskName" placeholder="必填" class="card-tag">
@@ -23,21 +23,6 @@
       </div>
       <div class="flex_col">
         <p>點數</p>
-
-        <!--//TODO select-->
-        <!--        <div class="select_group">-->
-        <!--          <div class="form_title">div下拉選單</div>-->
-        <!--          <div class="select_style"><span>請選擇</span></div>-->
-        <!--          <div class="select_dropdown">-->
-        <!--            <div class="select_option">選項1</div>-->
-        <!--            <div class="select_option">選項2</div>-->
-        <!--            <div class="select_option">選項3</div>-->
-        <!--            <div class="select_option">選項4</div>-->
-        <!--            <div class="select_option">選項5</div>-->
-        <!--          </div>-->
-        <!--          <div class="select_overlay"></div>    </div>-->
-
-
         <select v-model="taskPoint" class="card-tag">
           <option value="">選項</option>
           <option v-for="point in taskPointArray" :value="point">{{ point }}</option>
@@ -47,7 +32,7 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-ss flex-wrap"
+        class="list-group flex-row flex-ss flex-wrap animate__fadeInLeft animate__2s"
         :list="taskArray1"
         group="tasks"
         itemKey="id"
@@ -71,7 +56,7 @@
       </template>
     </draggable>
 
-    <div class="block-info flex-col flex-cc">
+    <div class="block-info flex-col flex-cc animate__fadeInRight animate__2s">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h2">待辦清單排序</p>
         <i class="i-order"></i>
