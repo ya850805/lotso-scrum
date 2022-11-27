@@ -26,6 +26,7 @@
     </draggable>
 
     <div class="sprint-content animate__fadeIn">
+      <div class="img_sprint"/>
       <draggable
           class="list-group-1 list-group-item"
           :list="daily"
@@ -79,16 +80,26 @@
       </button>
     </div>
 
-
+    <AlertTheme v-show="isShow" @closeAlert="isShow = false" :alertMessage="alertMessage"
+                :alert-btn-message="alertBtnMessage">
+      <template></template>
+    </AlertTheme>
   </section>
 </template>
 
 <script setup>
 import {SPRINT_MEETINGS} from "@/constant/const";
 import {onMounted, ref} from "vue";
+import {BTN_OK, MEETING_IS_WRONG, MEETING_IS_EMPTY} from "@/constant/error";
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
+
+//is alert show
+let isShow = ref(false)
+
+let alertMessage = ref("")
+let alertBtnMessage = ref(BTN_OK)
 
 const meetings = ref(SPRINT_MEETINGS)
 const daily = ref([])
@@ -128,12 +139,12 @@ function addToFrom(element) {
 
 function submit() {
   if (meetings.value.length > 0) {
-    alert("123")
-  } else if(daily.value[0].id !== 1 || review.value[0].id !== 2 || retrospective.value[0].id !== 3){
-    alert("456")
-  }
-  else {
-    // alert("forward")
+    alertMessage.value = MEETING_IS_EMPTY
+    isShow.value = true
+  } else if (daily.value[0].id !== 1 || review.value[0].id !== 2 || retrospective.value[0].id !== 3) {
+    alertMessage.value = MEETING_IS_WRONG
+    isShow.value = true
+  } else {
     router.push({
       name: 'retro-item'
     })
