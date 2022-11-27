@@ -25,7 +25,7 @@
       </template>
     </ChatTheme>
 
-    <div class="block-info flex-col flex-cc animate__fadeInRight animate__2s">
+    <div class="block-info flex-col flex-cc animate__fadeInRight">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h3 color_primary">短衝規劃會議<br>
           (Sprint Planning)</p>

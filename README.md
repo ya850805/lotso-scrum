@@ -41,7 +41,9 @@ Node.js 版本 16.11.68
 - assets/icon - icon圖示
 
 - components - vue組件
-- components/theme - vue共用組件popup
+- components/theme - vue共用組件
+- components/theme/AlertTheme - Alert popup template
+- - components/theme/ChatTheme - Chat Bubble template
 
 - constant/const.ts - 常數定義
 - constant/error.ts - alert訊息常數

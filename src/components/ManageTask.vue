@@ -13,7 +13,7 @@
       </ChatTheme>
     </div>
 
-    <div class="flex-row block-glass flex-cb animate__fadeInLeft animate__2s">
+    <div class="flex-row block-glass flex-cb animate__fadeInLeft">
       <div class="flex_col">
         <p>*待辦清單名稱</p>
         <input type="text" v-model="taskName" placeholder="必填" class="card-tag">
@@ -33,7 +33,7 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-ss flex-wrap animate__fadeInLeft animate__2s"
+        class="list-group flex-row flex-ss flex-wrap animate__fadeInLeft"
         :list="taskArray1"
         group="tasks"
         itemKey="id"
@@ -57,7 +57,7 @@
       </template>
     </draggable>
 
-    <div class="block-info flex-col flex-cc animate__fadeInRig ht animate__2s">
+    <div class="block-info flex-col flex-cc animate__fadeInRight">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h2">待辦清單排序</p>
         <i class="i-order"></i>
