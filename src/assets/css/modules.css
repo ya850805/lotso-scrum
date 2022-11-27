@@ -187,6 +187,7 @@
     top: 160px;
     width: 1300px;
     height: 560px;
+    pointer-events: none;
 }
 
 .img_sprint {
@@ -196,7 +197,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('../images/img_sprint_bg.png');
-    pointer-events: none;
 }
 
 /* @list drag - drag item - for sprint process--------------------------------------------------------------------------------------------- */

@@ -102,7 +102,7 @@ import {onMounted} from "vue";
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
-import {BTN_OK, TASK_NAME_IS_BLANK} from "@/constant/error";
+import {BTN_OK, RETRO_IS_WRONG} from "@/constant/error";
 
 const retroItems = ref(RETRO_ITEMS)
 const wellDone = ref([])
@@ -117,13 +117,12 @@ let alertMessage = ref("")
 let alertBtnMessage = ref(BTN_OK)
 
 function submit() {
-  //TODO validate retro item
   if (checkWellDone() && checkNeedImprovement()) {
     router.push({
       name: 'final'
     })
   } else {
-    alertMessage.value = TASK_NAME_IS_BLANK
+    alertMessage.value = RETRO_IS_WRONG
     isShow.value = true
   }
 }

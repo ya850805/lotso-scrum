@@ -82,7 +82,7 @@
 <script setup>
 import {TASK_STORY_POINTS, TASKS_KEY} from "@/constant/const";
 import {onMounted, ref} from "vue";
-import {BTN_OK, POINT_IS_EMPTY, SPRINT_IS_EMPTY} from "@/constant/error";
+import {BTN_OK, POINT_IS_EMPTY, SPRINT_IS_EMPTY,POINT_IS_OVER} from "@/constant/error";
 import AlertTheme from './theme/AlertTheme.vue';
 import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
@@ -124,10 +124,11 @@ function checkNullPoint() {
 
 function submit() {
   if (finalTaskArray.value.length === 0) {
-    alertMessage.value = POINT_IS_EMPTY
+    alertMessage.value = SPRINT_IS_EMPTY
     isShow.value = true
   } else if(sumPoints(finalTaskArray) > 21) {
-    alert("xxxx")
+    alertMessage.value = POINT_IS_OVER
+    isShow.value = true
   } else {
     router.push({
       name: 'sprint-calendar'
