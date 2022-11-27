@@ -281,6 +281,10 @@
     color: var(--txt-placeholder);
 }
 
+.for-date .card-tag p {
+    color: var(--txt-default);
+}
+
 .card-tag.w-100 {
     height: 180px;
 }

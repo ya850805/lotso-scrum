@@ -115,11 +115,13 @@
           <p class="color_primary">每日站立會議<br>
             (Daily Scrum)</p>
           <div class="card-tag w-100">
-            <p>每天都要進行的會議，以 15 分鐘為限制
-              昨天為團隊的短衝目標做了那些進度
-              今天我會如何準備來達到短衝目標
-              過程中有遇到什麼問題、難題
-              透過團隊分享，追蹤大家的工作狀況。</p>
+            <p>每天都要進行的會議，以 15 分鐘為限制</p>
+            <ul>
+              <li class="font-default">昨天為團隊的短衝目標做了那些進度</li>
+              <li class="font-default">今天我會如何準備來達到短衝目標</li>
+              <li class="font-default"> 過程中有遇到什麼問題、難題</li>
+            </ul>
+            <p> 透過團隊分享，追蹤大家的工作狀況。</p>
           </div>
         </div>
 
@@ -129,7 +131,7 @@
           <p class="color_primary">短衝檢視會議<br>
             (Sprint Review)</p>
           <div class="card-tag w-100">
-            <p>用來檢視該次短衝增量的成果，以蒐集相關的回饋數據或意見。</p>
+            <p class="font-default">用來檢視該次短衝增量的成果，以蒐集相關的回饋數據或意見。</p>
           </div>
         </div>
 
@@ -139,11 +141,13 @@
           <p class="color_primary">短衝自省會議<br>
             (Sprint Retrospective)</p>
           <div class="card-tag w-100">
-            <p>團隊會共同回顧該短衝歷程發生的事情
-              好的地方
-              可以改進的地方
-              如何維持我們已有的成功經驗
-              優化流程、讓團隊有變得更好的機會。</p>
+            <p class="font-default">團隊會共同回顧該短衝歷程發生的事情</p>
+            <ul>
+              <li class="font-default">好的地方</li>
+              <li class="font-default">可以改進的地方</li>
+              <li class="font-default">如何維持我們已有的成功經驗</li>
+            </ul>
+            <p>優化流程、讓團隊有變得更好的機會。</p>
           </div>
         </div>
 
