@@ -101,7 +101,7 @@ let isShow = ref(false)
 let alertMessage = ref("")
 let alertBtnMessage = ref(BTN_OK)
 
-const meetings = ref(SPRINT_MEETINGS)
+const meetings = ref([].concat(SPRINT_MEETINGS))
 const daily = ref([])
 const review = ref([])
 const retrospective = ref([])
