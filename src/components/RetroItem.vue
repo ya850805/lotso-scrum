@@ -105,7 +105,7 @@ import ChatTheme from "./theme/ChatTheme.vue"
 import {useRouter} from "vue-router/dist/vue-router";
 import {BTN_OK, RETRO_IS_WRONG} from "@/constant/error";
 
-const retroItems = ref(RETRO_ITEMS)
+const retroItems = ref([].concat(RETRO_ITEMS))
 const wellDone = ref([])
 const needImprovement = ref([])
 const router = useRouter()

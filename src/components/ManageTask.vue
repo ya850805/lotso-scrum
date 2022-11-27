@@ -109,7 +109,7 @@ import moreIcon from '@/assets/icon/i_more.svg'
 
 const router = useRouter()
 
-let taskArray1 = ref(INIT_SCRUM_TASK);
+let taskArray1 = ref([].concat(INIT_SCRUM_TASK));
 let taskArray2 = ref([])
 let taskPointArray = ref(TASK_STORY_POINTS)
 
