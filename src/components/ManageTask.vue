@@ -1,6 +1,7 @@
 <!--page2-->
 <template>
   <section class="flex-col">
+    <i class="bg-ball-3"></i>
     <img src="../assets/icon/i_jira.svg" width="145" height="57" class="i-confluence"/>
     <div class="flex-row">
       <img src="../assets/images/img_po_chat.png" width="158" height="158" class="img-chat"/>
@@ -12,7 +13,7 @@
       </ChatTheme>
     </div>
 
-    <div class="flex-row block-glass flex-cb animate__fadeInLeft animate__2s">
+    <div class="flex-row block-glass flex-cb animate__fadeInLeft">
       <div class="flex_col">
         <p>*待辦清單名稱</p>
         <input type="text" v-model="taskName" placeholder="必填" class="card-tag">
@@ -32,7 +33,7 @@
     </div>
 
     <draggable
-        class="list-group flex-row flex-ss flex-wrap animate__fadeInLeft animate__2s"
+        class="list-group flex-row flex-ss flex-wrap animate__fadeInLeft"
         :list="taskArray1"
         group="tasks"
         itemKey="id"
@@ -56,7 +57,7 @@
       </template>
     </draggable>
 
-    <div class="block-info flex-col flex-cc animate__fadeInRight animate__2s">
+    <div class="block-info flex-col flex-cc animate__fadeInRight">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h2">待辦清單排序</p>
         <i class="i-order"></i>
@@ -64,6 +65,7 @@
       <p>優先度高</p>
 
       <div class="order-list">
+        <i class="i-drag-arrow"></i>
 
         <div class="list-group-item"></div>
         <div class="list-group-item"></div>

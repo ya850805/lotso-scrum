@@ -2,6 +2,8 @@
 <template>
   <section class="flex-col">
     <img src="../assets/images/img_po.png" width="269" height="708" class="img-po"/>
+    <i class="bg-ball-1"></i>
+    <i class="bg-ball-2"></i>
     <ChatTheme class="animate__bounceIn">
       <template #text>
         我是 熊抱科技，開發 A 組的 PO 子蓓。<br>

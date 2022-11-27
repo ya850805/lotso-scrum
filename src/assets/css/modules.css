@@ -647,6 +647,25 @@ i, img {
     bottom: 0;
 }
 
+.i-drag-arrow {
+    position: absolute;
+    top: 100px;
+    left: -140px;
+    min-width: 127px;
+    min-height: 197px;
+    background-image: url("../icon/i_drag_arrow.svg");
+}
+
+.retro-list .i-drag-arrow {
+    top: 20px;
+}
+
+.sprint-content .i-drag-arrow {
+    background-image: url("../icon/i_flow_arrow.svg");
+    bottom: 18%;
+    left: 60%;
+}
+
 /* @圖示-image ---------------------------------------------------------------------------------------------- */
 .img-po {
     position: absolute;
@@ -683,6 +702,50 @@ i, img {
     position: absolute;
     top: 80px;
     left: 20px;
+}
+
+.bg-ball-1 {
+    position: fixed;
+    top: 30%;
+    left: -60px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background: var(--gradient-sec);
+    box-shadow: var(--outside-glass);
+}
+
+.bg-ball-2 {
+    position: fixed;
+    bottom: -80px;
+    left: -60px;
+    width: 225px;
+    height: 225px;
+    border-radius: 100%;
+    background: var(--gradient-thi);
+    box-shadow: var(--outside-glass);
+}
+
+.bg-ball-3 {
+    position: fixed;
+    bottom: -80px;
+    right: 400px;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: var(--gradient-sec);
+    box-shadow: var(--outside-glass);
+}
+
+.bg-ball-4 {
+    position: fixed;
+    top: 120px;
+    right: 360px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background: var(--gradient-thi);
+    box-shadow: var(--outside-glass);
 }
 
 /* @動畫 - animate ---------------------------------------------------------------------------------------------- */

@@ -36,6 +36,7 @@
         <div class="flex_col">
           <p class="fz-h3">做得好的地方</p>
           <div class="order-list">
+            <i class="i-drag-arrow"></i>
             <div class="list-group-item"></div>
             <div class="list-group-item"></div>
           </div>

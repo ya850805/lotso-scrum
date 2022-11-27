@@ -2,6 +2,8 @@
 <template>
   <section class="flex-col">
     <img src="../assets/images/img_master.png" width="286" height="730" class="img-po"/>
+    <i class="bg-ball-3"></i>
+    <i class="bg-ball-4"></i>
     <ChatTheme class="animate__bounceIn">
       <template #text>
         嗨!我是Scrum Master 子畢，<br>
@@ -23,7 +25,7 @@
       </template>
     </ChatTheme>
 
-    <div class="block-info flex-col flex-cc animate__fadeInRight animate__2s">
+    <div class="block-info flex-col flex-cc animate__fadeInRight">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h3 color_primary">短衝規劃會議<br>
           (Sprint Planning)</p>
