@@ -56,7 +56,7 @@
       </template>
     </draggable>
 
-    <div class="block-info flex-col flex-cc animate__fadeInRight animate__2s">
+    <div class="block-info flex-col flex-cc animate__fadeInRig ht animate__2s">
       <div class="flex-row flex-cb w-100">
         <p class="fz-h2">待辦清單排序</p>
         <i class="i-order"></i>
@@ -64,6 +64,7 @@
       <p>優先度高</p>
 
       <div class="order-list">
+        <i class="i-drag-arrow"></i>
 
         <div class="list-group-item"></div>
         <div class="list-group-item"></div>

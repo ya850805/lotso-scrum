@@ -45,6 +45,7 @@
       </div>
       <p>21點/5人</p>
       <div class="order-list sprint-list">
+        <i class="i-drag-arrow"></i>
         <div class="list-group-item"></div>
         <div class="list-group-item"></div>
         <div class="list-group-item"></div>
