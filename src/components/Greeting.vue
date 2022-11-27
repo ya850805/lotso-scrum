@@ -1,7 +1,7 @@
 <!--page0-->
 <template>
   <section class="content-card flex-col flex-sb">
-    <img src="../assets/images/img_po.png" width="298" height="554" class="img-po animate__fadeInLeft"/>
+    <img src="../assets/images/img_po.png" width="220" height="600" class="img-po animate__fadeInLeft"/>
     <img src="../assets/images/img_bear.svg" width="523" height="599" class="img-bear animate__fadeInRight">
 
     <div class="block-glass">

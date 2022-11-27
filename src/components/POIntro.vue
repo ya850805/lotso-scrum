@@ -1,7 +1,7 @@
 <!--page1-->
 <template>
   <section class="flex-col">
-    <img src="../assets/images/img_po.png" width="360" height="708" class="img-po "/>
+    <img src="../assets/images/img_po.png" width="269" height="708" class="img-po"/>
     <ChatTheme class="animate__bounceIn">
       <template #text>
         我是 熊抱科技，開發 A 組的 PO 子蓓。<br>

@@ -26,6 +26,7 @@
     </draggable>
 
     <div class="sprint-content animate__fadeIn">
+      <div class="img_sprint"/>
       <draggable
           class="list-group-1 list-group-item"
           :list="daily"

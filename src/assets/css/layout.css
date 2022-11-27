@@ -2,7 +2,7 @@
 body {
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 90ch;
     justify-content: center;
     align-items: center;
 
@@ -15,8 +15,44 @@ body {
     font-size: var(--font-size-base);
     color: var(--txt-default);
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
+
+body::-webkit-scrollbar,
+.list-area::-webkit-scrollbar {
+    position: relative;
+    width: 8px;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-track,
+.list-area::-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: var(--down-neum);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb,
+.list-area::-webkit-scrollbar-thumb {
+    background: var(--gradient-sec);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+.list-area::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+::-moz-selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+::selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
 
 #app {
     display: flex;
@@ -25,24 +61,24 @@ body {
 
     width: calc(100% - 96px);
     height: calc(100% - 96px);
-    /*margin: 48px;*/
-
-    /*max-width: 1200px;*/
-    /*max-height: 886px;*/
     border: 1px solid #BB3D63;
 }
 
+header {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+}
+
 header > img {
-    position: fixed;
-    top: 48px;
+    position: absolute;
     left: 48px;
     width: 183px;
     height: 80px;
 }
 
 header > .outside-progress {
-    position: fixed;
-    top: 48px;
+    position: absolute;
     right: 48px;
 }
 
@@ -54,27 +90,8 @@ section {
 .content-card {
     padding: 85px 112px;
 }
-.content-pop{
+
+.content-pop {
     position: fixed;
     z-index: 20;
 }
-
-
-/*@media (hover: hover) {*/
-/*    a:hover {*/
-/*        background-color: hsla(160, 100%, 37%, 0.2);*/
-/*    }*/
-/*}*/
-
-/*@media (min-width: 1024px) {*/
-/*  body {*/
-/*    display: flex;*/
-/*    place-items: center;*/
-/*  }*/
-
-/*  #app {*/
-/*    display: grid;*/
-/*    grid-template-columns: 1fr 1fr;*/
-/*    padding: 0 2rem;*/
-/*  }*/
-/*}*/

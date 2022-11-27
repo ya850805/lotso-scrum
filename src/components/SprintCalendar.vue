@@ -1,7 +1,7 @@
 <!--page5-->
 <template>
   <section class="flex-col">
-    <img src="../assets/images/img_engineer.png" width="220" height="400" class="img-engineer"/>
+    <img src="../assets/images/img_engineer.png" width="130" height="400" class="img-engineer"/>
 
     <ChatTheme>
       <template #text>
