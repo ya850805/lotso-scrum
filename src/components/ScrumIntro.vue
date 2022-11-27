@@ -2,6 +2,8 @@
 <template>
   <section class="flex-col">
     <img src="../assets/images/img_master.png" width="286" height="730" class="img-po"/>
+    <i class="bg-ball-3"></i>
+    <i class="bg-ball-4"></i>
     <ChatTheme class="animate__bounceIn">
       <template #text>
         嗨!我是Scrum Master 子畢，<br>

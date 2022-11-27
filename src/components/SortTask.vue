@@ -1,6 +1,8 @@
 <!--page4-->
 <template>
   <section class="flex-col">
+    <i class="bg-ball-1"></i>
+    <i class="bg-ball-2"></i>
     <div class="flex-row">
       <img src="../assets/images/img_master_chat.png" width="158" height="158" class="img-chat"/>
       <ChatTheme class="animate__bounceIn">

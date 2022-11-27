@@ -3,6 +3,8 @@
   <section class="flex-col flex-cb w-100">
     <div class="flex-row w-100">
       <img src="../assets/images/img_engineer_chat.png" width="158" height="158" class="img-chat"/>
+      <i class="bg-ball-1"></i>
+      <i class="bg-ball-2"></i>
       <ChatTheme class="animate__bounceIn">
         <template #text>
           Sprint 流程記憶大考驗<br>

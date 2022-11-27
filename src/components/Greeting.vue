@@ -3,7 +3,8 @@
   <section class="content-card flex-col flex-sb">
     <img src="../assets/images/img_po.png" width="220" height="600" class="img-po animate__fadeInLeft"/>
     <img src="../assets/images/img_bear.svg" width="523" height="599" class="img-bear animate__fadeInRight">
-
+    <i class="bg-ball-1"></i>
+    <i class="bg-ball-2"></i>
     <div class="block-glass">
       <p class="fz-h3 w_100">Hi ! 歡迎加入熊抱科技~<br>
         在正式加入專案開發之前，需要請你先了解 Scrum 的流程與精神！

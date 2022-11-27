@@ -4,9 +4,10 @@
   <section class="content-card final-page flex-col flex-sb">
     <img src="../assets/images/img_group.png" width="487" height="420" class="img-po animate__fadeInLeft "/>
     <img src="../assets/images/img_bear.svg" width="523" height="599" class="img-bear animate__fadeInRight">
+    <i class="bg-ball-1"></i>
+    <i class="bg-ball-2"></i>
 
     <div class="block-glass">
-
       <p class="fz-h3 w_100">Hi ! 恭喜你加入熊抱科技~<br>
         成功通過Scrum新手村的挑戰任務吧！
         <br><br><br>

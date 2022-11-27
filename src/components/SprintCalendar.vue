@@ -2,7 +2,8 @@
 <template>
   <section class="flex-col">
     <img src="../assets/images/img_engineer.png" width="130" height="400" class="img-engineer"/>
-
+    <i class="bg-ball-1"></i>
+    <i class="bg-ball-2"></i>
     <ChatTheme>
       <template #text>
         我是開發子能，Sprint是一個短衝，團隊會在這期間執行開發，舉辦每日<br>

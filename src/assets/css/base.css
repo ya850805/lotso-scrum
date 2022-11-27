@@ -56,7 +56,7 @@ input:focus, button:focus, select:focus {
     /*gradient-variables*/
     --gradient-primary: linear-gradient(270deg, #FF6A6A 0%, #FF6B96 45%, #FD87FF 70%, #BB85FF 100%);
     --gradient-sec: linear-gradient(180deg, rgba(255, 106, 106, 0.3) 0%, #BB85FF 100%);
-    --gradient-thi: linear-gradient(180deg, rgba(255, 106, 106, 0.3) 0%, #BB85FF 100%);
+    --gradient-thi: linear-gradient(180deg, #FDD0DD 0%, #FD87FF 100%);
     --gradient-bg: linear-gradient(180deg, #FFF1E0 0.29%, #FFEBEB 99.55%);
     --gradient-neu: linear-gradient(180deg, #EBEDF0 0%, #F2F4F6 100%);
 
@@ -125,7 +125,7 @@ p, input, select, .font-default {
     justify-content: flex-start;
 }
 
-.flex-ec{
+.flex-ec {
     align-items: flex-end;
     justify-content: center;
 }
