@@ -2,10 +2,13 @@
 
 ## 作品說明
 
-透過熊抱可愛人物說明Scrum流程，將圖文說明搭配遊戲實際操作，採用玻璃擬態、新擬物化設計結合區塊拖移， 讓介面突破扁平設計更有層次！新手也能快速上手Scrum！
+透過動畫與互動說明Scrum流程，採用玻璃擬態、新擬物化設計結合區塊拖移，
+讓介面突破扁平設計更有層次！透過新手使用者情境，提供新增待辦任務、給予對應點數、結合開啟對應Jira功能，讓使用者能更深入了解，也規劃說明點數、正面描述，會議時程搭配日曆動畫說明時程，讓新手也能快速上手Scrum！
 
 ## 系統說明 Project Setup
+
 **Node.js 版本 16.11.68**
+
 ```sh
 npm install
 ```
@@ -50,14 +53,14 @@ sh ./deploy.sh
 
 ## 使用技術
 
-- animate.css: 4.1.1, 
-- vue: 3.2.41, 
-- vue-router: 4.1.5, 
-- vuedraggable: 4.1.0, 
-- @vitejs/plugin-vue: 3.1.2, 
-- @vue/tsconfig:0.1.3, 
-- npm-run-all: 4.1.5, 
-- typescript: 4.7.4, 
-- vite: 3.1.8, 
+- animate.css: 4.1.1,
+- vue: 3.2.41,
+- vue-router: 4.1.5,
+- vuedraggable: 4.1.0,
+- @vitejs/plugin-vue: 3.1.2,
+- @vue/tsconfig:0.1.3,
+- npm-run-all: 4.1.5,
+- typescript: 4.7.4,
+- vite: 3.1.8,
 - vue-tsc: 1.0.8
 
