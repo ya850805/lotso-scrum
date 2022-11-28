@@ -62,5 +62,6 @@ sh ./deploy.sh
 - npm-run-all: 4.1.5,
 - typescript: 4.7.4,
 - vite: 3.1.8,
-- vue-tsc: 1.0.8
+- vue-tsc: 1.0.8,
+- vue-confetti-explosion:1.0.1
 

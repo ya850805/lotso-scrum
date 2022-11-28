@@ -28,11 +28,14 @@
       </RouterLink>
     </div>
 
+    <ConfettiExplosion :stageHeight="2000" :stageWidth="2000" :duration="8000" class="animate_final"/>
+
   </section>
 </template>
 
 <script setup>
 import {onMounted} from "vue";
+import ConfettiExplosion from "vue-confetti-explosion";
 
 const emit = defineEmits(['setProgressRate'])
 
@@ -42,5 +45,13 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.animate_final {
+  position: fixed;
+  top: 0;
+  left: 30%;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
 
 </style>
