@@ -12,3 +12,6 @@ app.mount('#app')
 
 app.component('draggable', draggable)
 
+router.afterEach((to, from, next) => {
+    window.scrollTo(0, 0);
+});

@@ -493,7 +493,6 @@ select:focus {
     height: 130px;
     box-shadow: var(--up-neum);
     border-radius: 100%;
-    background: #F6E7D8;
     z-index: 10;
 }
 
